@@ -14,8 +14,16 @@ class LocalData {
       available: true,
       price: 2.4,
       measureType: "kg",
-      photo: "",
+      photo: 'assets/Group.png',
       units: 1
+    ),
+    Item(
+        name: "name",
+        available: true,
+        price: 2.4,
+        measureType: "kg",
+        photo: 'assets/Group.png',
+        units: 1
     ),
   ];
 }
