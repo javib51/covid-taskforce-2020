@@ -1,8 +1,8 @@
 import 'package:covid/data/item.dart';
 import 'package:covid/data/local_data.dart';
 import 'package:covid/utils.dart';
+import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ShoppingBasketPage extends StatefulWidget {
   @override
@@ -125,8 +125,8 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                         new IconButton(
                           icon: new Image.asset('assets/circle-plus.png'),
                           onPressed: () {
-                              item.units++;
-                              setState(() {});
+                            item.units++;
+                            setState(() {});
                           },
                         ),
                       ],
@@ -159,34 +159,26 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
   Widget build(BuildContext context) {
     items = LocalData.instance.basket;
 
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            icon: Icon(FontAwesomeIcons.arrowLeft),
-            onPressed: () {
-              Navigator.pop(context);
-            }),
-//        title: Text("Stockholm"),
-//        actions: <Widget>[
-//          Logo()
-//        ],
-      ),
-      body: _buildBody(context),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          print("place an order");
-        },
-        backgroundColor: Color(0xff564787),
-        label: Text(
-          "Place an order",
-          style: TextStyle(
-              fontFamily: "SF Pro Display",
-              fontSize: 18,
-              fontWeight: FontWeight.w400,
-              color: Color(0xfff2FDFF)),
+    return SafeArea(
+      child: Scaffold(
+        appBar: MyCustomAppBar(title: "Supermarket X", height: 90),
+        body: _buildBody(context),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {
+            print("place an order");
+          },
+          backgroundColor: Color(0xff564787),
+          label: Text(
+            "Place an order",
+            style: TextStyle(
+                fontFamily: "SF Pro Display",
+                fontSize: 18,
+                fontWeight: FontWeight.w400,
+                color: Color(0xfff2FDFF)),
+          ),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
