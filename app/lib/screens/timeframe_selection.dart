@@ -40,16 +40,14 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: getSizeHeight(context, 3.3),
-                    fontFamily: "Core Sans G",
                     color: purpleButtonActive,
                   )),
             ),
             SizedBox(
               height: getSizeHeight(context, 5),
             ),
-            //TODO: Implement a sort of custom radio button so that it performs as desired (states)
             SizedBox(
-              height: getSizeHeight(context, 5),
+              height: getSizeHeight(context, 5.5),
               child: FlatButton(
                 color: selectedButton == 1
                     ? turquoiseDarkButton
@@ -59,7 +57,6 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: getSizeHeight(context, 2),
-                      fontFamily: "Core Sans G",
                       color: blackText,
                     )),
                 onPressed: () {
@@ -71,10 +68,10 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
               ),
             ),
             SizedBox(
-              height: getSizeHeight(context, 2),
+              height: getSizeHeight(context, 1.25),
             ),
             SizedBox(
-              height: getSizeHeight(context, 5),
+              height: getSizeHeight(context, 5.5),
               child: FlatButton(
                 color: selectedButton == 2
                     ? turquoiseDarkButton
@@ -84,7 +81,6 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: getSizeHeight(context, 2),
-                      fontFamily: "Core Sans G",
                       color: blackText,
                     )),
                 onPressed: () {
@@ -96,10 +92,10 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
               ),
             ),
             SizedBox(
-              height: getSizeHeight(context, 2),
+              height: getSizeHeight(context, 1.25),
             ),
             SizedBox(
-              height: getSizeHeight(context, 5),
+              height: getSizeHeight(context, 5.5),
               child: FlatButton(
                 color: selectedButton == 3
                     ? turquoiseDarkButton
@@ -109,7 +105,6 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: getSizeHeight(context, 2),
-                      fontFamily: "Core Sans G",
                       color: blackText,
                     )),
                 onPressed: () {
@@ -122,10 +117,10 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
               ),
             ),
             SizedBox(
-              height: getSizeHeight(context, 2),
+              height: getSizeHeight(context, 1.25),
             ),
             SizedBox(
-              height: getSizeHeight(context, 5),
+              height: getSizeHeight(context, 5.5),
               child: FlatButton(
                 color: selectedButton == 4
                     ? turquoiseDarkButton
@@ -135,7 +130,6 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: getSizeHeight(context, 2),
-                      fontFamily: "Core Sans G",
                       color: blackText,
                     )),
                 onPressed: () {
@@ -149,21 +143,21 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
             SizedBox(
               height: getSizeHeight(context, 5),
             ),
-            //TODO: If any of the radio buttons above is selected, this button's state changes and it becomes clickable
-            SizedBox(
+            Container(
               height: getSizeHeight(context, 8),
-              width: getSizeWidth(context, 1),
+              padding: EdgeInsets.only(left: getSizeWidth(context, 10), right: getSizeWidth(context, 10)),
               child: FlatButton(
-                color: purpleButtonNonActive,
+                color: purpleButtonActive,
+                disabledColor: purpleButtonNonActive,
                 shape: RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(12.0),
-                    side: BorderSide(color: Colors.purple)),
+//                    side: BorderSide(color: Colors.red)
+                ),
                 child: Text("Confirm order",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: getSizeHeight(context, 2),
-                      fontFamily: "Core Sans G",
                       color: turquoiseLightButton,
                     )),
                 onPressed: !selected

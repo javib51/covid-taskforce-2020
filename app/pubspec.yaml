@@ -54,6 +54,15 @@ flutter:
     - assets/
     - assets/images/
 
+  fonts:
+    - family: CoreSansG
+      fonts:
+        - asset: fonts/CoreSansG-Regular.ttf
+        - asset: fonts/CoreSansG-Italic.ttf
+          style: italic
+        - asset: fonts/CoreSansG-Bold.ttf
+        - asset: fonts/CoreSansG-Light.ttf
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

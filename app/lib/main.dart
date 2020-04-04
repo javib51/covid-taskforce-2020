@@ -32,6 +32,7 @@ class _AppState extends State<App> {
 //      key: Keys.globKey,
       debugShowCheckedModeBanner: false,
       theme: new ThemeData(
+        fontFamily: 'CoreSansG',
         brightness: Brightness.light,
         // ignore: strong_mode_invalid_cast_new_expr
         primaryColor: purpleButtonActive,
