@@ -100,7 +100,7 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                 Column(
                   children: <Widget>[
                     Text(
-                      "${item.units}",
+                      item.units == 0 ? "" : "${item.units}",
                       style: TextStyle(
                         fontSize: 20,
                         color: Color(0xff9AD4D6),
@@ -112,7 +112,7 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                         new IconButton(
                           icon: new Image.asset('assets/circle-minus.png'),
                           onPressed: () {
-                            if (item.units > 1) {
+                            if (item.units > 0) {
                               item.units--;
                               setState(() {});
                             }

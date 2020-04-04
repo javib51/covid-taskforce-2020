@@ -17,14 +17,14 @@ class LocalData {
         price: 2.4,
         measureType: "kg",
         photo: 'assets/Group.png',
-        units: 1),
+        units: 0),
     Item(
         name: "name",
         available: true,
         price: 2.4,
         measureType: "kg",
         photo: 'assets/Group.png',
-        units: 1),
+        units: 0),
   ];
 
   List<InventoryItem> inventory = [
@@ -48,32 +48,19 @@ class LocalData {
       photo: 'assets/spaghetti.png',
       missing: false,
       items: [
-        InventoryItem(
-            name: "Pasta",
-            photo: 'assets/pasta.png'),
-        InventoryItem(
-            name: "Meat",
-            photo: 'assets/meat.png'),
-        InventoryItem(
-            name: "Tomatos",
-            photo: 'assets/tomatos.png'),
+        InventoryItem(name: "Pasta", photo: 'assets/pasta.png'),
+        InventoryItem(name: "Meat", photo: 'assets/meat.png'),
+        InventoryItem(name: "Tomatos", photo: 'assets/tomatos.png'),
       ],
     ),
     Recipe(
       name: "Egg Fried Rice",
-      photo: 'assets/fried_rice.png',      missing: false,
-
-
+      photo: 'assets/fried_rice.png',
+      missing: false,
       items: [
-        InventoryItem(
-            name: "rice",
-            photo: 'assets/file5.png'),
-        InventoryItem(
-            name: "SOmething",
-            photo: 'assets/file6.png'),
-        InventoryItem(
-            name: "Soya",
-            photo: 'assets/file7.png'),
+        InventoryItem(name: "rice", photo: 'assets/file5.png'),
+        InventoryItem(name: "SOmething", photo: 'assets/file6.png'),
+        InventoryItem(name: "Soya", photo: 'assets/file7.png'),
       ],
     ),
     Recipe(
@@ -81,15 +68,9 @@ class LocalData {
       photo: 'assets/french_fries.png',
       missing: true,
       items: [
-        InventoryItem(
-            name: "Oil",
-            photo: 'assets/oil.png'),
-        InventoryItem(
-            name: "Null",
-            photo: 'assets/null.png'),
-        InventoryItem(
-            name: "salt",
-            photo: 'assets/file11.png'),
+        InventoryItem(name: "Oil", photo: 'assets/oil.png'),
+        InventoryItem(name: "Null", photo: 'assets/null.png'),
+        InventoryItem(name: "salt", photo: 'assets/file11.png'),
       ],
     ),
   ];
