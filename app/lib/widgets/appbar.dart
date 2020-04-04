@@ -13,6 +13,7 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isTitleEmpty = title?.isEmpty ?? true;
     return Column(
       children: [
         SizedBox(
@@ -24,23 +25,38 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               padding: EdgeInsets.only(
                 left: getSizeWidth(context, 5),
               ),
-              child: Image.asset("assets/Logo.png", width: 70, height: 70,),
+              child: Image.asset(
+                "assets/Logo.png",
+                width: 70,
+                height: 70,
+              ),
             ),
-            SizedBox(width: getSizeWidth(context, 8),),
-            Column(children: <Widget>[
-              Text("Community", style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-                color: Color(0xff9AD4D6),
-                fontFamily: "Core Sans G",
-              ),),
-
-              title?.isEmpty ?? true? Container(): Text(title, style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Core Sans G",
-              ),),
-            ],),
+            SizedBox(
+              width: getSizeWidth(context, 8),
+            ),
+            Column(
+              children: <Widget>[
+                Text(
+                  "Community",
+                  style: TextStyle(
+                    fontSize: isTitleEmpty ? 32 : 24,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff9AD4D6),
+                    fontFamily: "Core Sans G",
+                  ),
+                ),
+                isTitleEmpty
+                    ? Container()
+                    : Text(
+                        title,
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Core Sans G",
+                        ),
+                      ),
+              ],
+            ),
           ],
         ),
       ],
