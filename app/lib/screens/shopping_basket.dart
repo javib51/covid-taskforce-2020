@@ -48,6 +48,7 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                   width: getSizeWidth(context, 7),
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(
                       height: getSizeHeight(context, 0.7),
@@ -57,7 +58,6 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 20,
-                        fontFamily: "Core Sans G",
                       ),
                     ),
                     Text(
@@ -66,7 +66,6 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                         color: Color(0xff9AD4D6),
                         fontStyle: FontStyle.italic,
                         fontSize: 12,
-                        fontFamily: "Core Sans G",
                       ),
                     ),
                   ],
@@ -84,7 +83,6 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                       style: TextStyle(
                         fontSize: 20,
                         color: Color(0xff564787),
-                        fontFamily: "Core Sans G",
                       ),
                     ),
                     Text(
@@ -92,7 +90,6 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                       style: TextStyle(
                         fontSize: 12,
                         color: Color(0xffA19C9C),
-                        fontFamily: "Core Sans G",
                       ),
                     ),
                   ],
@@ -103,11 +100,10 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                 Column(
                   children: <Widget>[
                     Text(
-                      "${item.units}",
+                      item.units == 0 ? "" : "${item.units}",
                       style: TextStyle(
                         fontSize: 20,
                         color: Color(0xff9AD4D6),
-                        fontFamily: "Core Sans G",
                       ),
                     ),
                     Row(
@@ -116,7 +112,7 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                         new IconButton(
                           icon: new Image.asset('assets/circle-minus.png'),
                           onPressed: () {
-                            if (item.units > 1) {
+                            if (item.units > 0) {
                               item.units--;
                               setState(() {});
                             }

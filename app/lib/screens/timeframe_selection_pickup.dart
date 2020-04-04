@@ -3,12 +3,12 @@ import 'package:covid/utils/const_variables.dart';
 import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 
-class TimeframeSelectionPage extends StatefulWidget {
+class TimeframeSelectionPickPage extends StatefulWidget {
   @override
-  State<TimeframeSelectionPage> createState() => _TimeframeSelectionPageState();
+  State<TimeframeSelectionPickPage> createState() => _TimeframeSelectionPickPageState();
 }
 
-class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
+class _TimeframeSelectionPickPageState extends State<TimeframeSelectionPickPage> {
   bool selected = false;
   int selectedButton = 0;
 
@@ -36,7 +36,7 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
         child: Center(
           child: ListView(children: <Widget>[
             SizedBox(
-              child: Text("Please select when you need the delivery latest by:",
+              child: Text("Please select when you can pick up your order:",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -143,30 +143,6 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
             ),
             SizedBox(
               height: getSizeHeight(context, 5),
-            ),
-            Container(
-              height: getSizeHeight(context, 8),
-              padding: EdgeInsets.only(left: getSizeWidth(context, 10), right: getSizeWidth(context, 10)),
-              child: FlatButton(
-                color: purpleButtonActive,
-                disabledColor: purpleButtonNonActive,
-                shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(12.0),
-//                    side: BorderSide(color: Colors.red)
-                ),
-                child: Text("Confirm order",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: getSizeHeight(context, 2),
-                      color: turquoiseLightButton,
-                    )),
-                onPressed: !selected
-                    ? null
-                    : () {
-                        //                  Navigator.pushNamed(context, AppRoutes.map);
-                      },
-              ),
             ),
           ]),
         ),

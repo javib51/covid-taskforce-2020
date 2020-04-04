@@ -31,9 +31,21 @@ class _DashboardPageState extends State<DashboardPage> {
               },
             ),
             FlatButton(
-              child: Text("Timeframe Selection"),
+              child: Text("Timeframe Selection delivery"),
               onPressed: () {
                 Navigator.pushNamed(context, AppRoutes.timeframeSelection);
+              },
+            ),
+            FlatButton(
+              child: Text("Timeframe Selection pick up"),
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.timeframeSelectionPickup);
+              },
+            ),
+            FlatButton(
+              child: Text("Selection pick extra up"),
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.selectionPickExtra);
               },
             ),
             FlatButton(
