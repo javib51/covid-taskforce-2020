@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:covid/utils/const_variables.dart';
+import 'package:covid/utils.dart';
+import 'package:flutter/material.dart';
 
 class TimeframeSelectionPage extends StatefulWidget {
   @override
@@ -15,14 +16,22 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
   Widget _buildBody(BuildContext context) {
 
     return Container(
-      margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 100.0),
+      margin: EdgeInsets.only(
+          left: getSizeHeight(context, 2),
+          right: getSizeHeight(context, 2),
+          top: getSizeHeight(context, 2),
+          bottom: getSizeHeight(context, 10)),
       decoration: new BoxDecoration(
           color: purpleBackground,
           borderRadius: new BorderRadius.all(const Radius.circular(6.0))
       ),
       child: new Container(
         color: purpleButtonNonActive,
-        margin: const EdgeInsets.only(left: 50.0, right: 50.0, top: 80.0, bottom: 50.0),
+        margin: EdgeInsets.only(
+            left: getSizeHeight(context, 7),
+            right: getSizeHeight(context, 7),
+            top: getSizeHeight(context, 15),
+            bottom: getSizeHeight(context, 7)),
         child: Center(
           child: ListView(
             children: <Widget>[
@@ -31,11 +40,77 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
                   "Please select when you need the delivery latest by:",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: 20.0,
+                      fontWeight: FontWeight.w500,
+                      fontSize: getSizeHeight(context, 3.3),
+                      fontFamily: "Core Sans G",
                       color: purpleButtonActive,
                   )
                 ),
-              )
+              ),
+              FlatButton(
+                color: paleGreenTextBackground,
+                child: Text(
+                    "By tomorrow",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: getSizeHeight(context, 2),
+                      fontFamily: "Core Sans G",
+                      color: blackText,
+                  )
+                ),
+                onPressed: () {
+//                  Navigator.pushNamed(context, AppRoutes.map);
+                },
+              ),
+              FlatButton(
+                color: paleGreenTextBackground,
+                child: Text(
+                    "This week",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: getSizeHeight(context, 2),
+                      fontFamily: "Core Sans G",
+                      color: blackText,
+                    )
+                ),
+                onPressed: () {
+//                  Navigator.pushNamed(context, AppRoutes.map);
+                },
+              ),
+              FlatButton(
+                color: paleGreenTextBackground,
+                child: Text(
+                    "Next week",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: getSizeHeight(context, 2),
+                      fontFamily: "Core Sans G",
+                      color: blackText,
+                    )
+                ),
+                onPressed: () {
+//                  Navigator.pushNamed(context, AppRoutes.map);
+                },
+              ),
+              FlatButton(
+                color: paleGreenTextBackground,
+                child: Text(
+                    "Specific day",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: getSizeHeight(context, 2),
+                      fontFamily: "Core Sans G",
+                      color: blackText,
+                    )
+                ),
+                onPressed: () {
+//                  Navigator.pushNamed(context, AppRoutes.map);
+                },
+              ),
             ]
           ),
         ),
