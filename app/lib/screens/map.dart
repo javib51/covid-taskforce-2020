@@ -24,28 +24,11 @@ class _MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            icon: Icon(FontAwesomeIcons.arrowLeft),
-            onPressed: () {
-              Navigator.pop(context);
-            }),
-        title: Text("Stockholm"),
-//        actions: <Widget>[
-//          IconButton(
-//              icon: Icon(FontAwesomeIcons.search),
-//              onPressed: () {
-////
-//              }),
-//        ],
-      ),
-      body: Stack(
-        children: <Widget>[
-          _buildGoogleMap(context),
-          _buildContainer(),
-        ],
-      ),
+    return Stack(
+      children: <Widget>[
+        _buildGoogleMap(context),
+        _buildContainer(),
+      ],
     );
   }
 
@@ -119,9 +102,7 @@ class _MapPageState extends State<MapPage> {
               child: Text(
             shop.name,
             style: TextStyle(
-                color: shop.color,
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold),
+                color: shop.color, fontSize: 24.0, fontWeight: FontWeight.bold),
           )),
         ),
         SizedBox(height: 5.0),
