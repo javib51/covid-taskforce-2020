@@ -26,7 +26,6 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
           borderRadius: new BorderRadius.all(const Radius.circular(6.0))
       ),
       child: new Container(
-        color: purpleButtonNonActive,
         margin: EdgeInsets.only(
             left: getSizeHeight(context, 7),
             right: getSizeHeight(context, 7),
@@ -35,7 +34,7 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
         child: Center(
           child: ListView(
             children: <Widget>[
-              Center(
+              SizedBox(
                 child: Text(
                   "Please select when you need the delivery latest by:",
                   textAlign: TextAlign.center,
@@ -47,69 +46,122 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
                   )
                 ),
               ),
-              FlatButton(
-                color: paleGreenTextBackground,
-                child: Text(
-                    "By tomorrow",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: getSizeHeight(context, 2),
-                      fontFamily: "Core Sans G",
-                      color: blackText,
-                  )
-                ),
-                onPressed: () {
-//                  Navigator.pushNamed(context, AppRoutes.map);
-                },
+              SizedBox(
+                height: getSizeHeight(context, 5),
               ),
-              FlatButton(
-                color: paleGreenTextBackground,
-                child: Text(
-                    "This week",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: getSizeHeight(context, 2),
-                      fontFamily: "Core Sans G",
-                      color: blackText,
+              //TODO: Implement a sort of custom radio button so that it performs as desired (states)
+              SizedBox(
+                height: getSizeHeight(context, 5),
+                child: FlatButton(
+                  color: paleGreenTextBackground,
+                  child: Text(
+                      "By tomorrow",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: getSizeHeight(context, 2),
+                        fontFamily: "Core Sans G",
+                        color: blackText,
                     )
+                  ),
+                  onPressed: () {
+  //                  Navigator.pushNamed(context, AppRoutes.map);
+                  },
                 ),
-                onPressed: () {
-//                  Navigator.pushNamed(context, AppRoutes.map);
-                },
               ),
-              FlatButton(
-                color: paleGreenTextBackground,
-                child: Text(
-                    "Next week",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: getSizeHeight(context, 2),
-                      fontFamily: "Core Sans G",
-                      color: blackText,
-                    )
-                ),
-                onPressed: () {
-//                  Navigator.pushNamed(context, AppRoutes.map);
-                },
+              SizedBox(
+                height: getSizeHeight(context, 2),
               ),
-              FlatButton(
-                color: paleGreenTextBackground,
-                child: Text(
-                    "Specific day",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: getSizeHeight(context, 2),
-                      fontFamily: "Core Sans G",
-                      color: blackText,
-                    )
+              SizedBox(
+                height: getSizeHeight(context, 5),
+                child: FlatButton(
+                  color: paleGreenTextBackground,
+                  child: Text(
+                      "This week",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: getSizeHeight(context, 2),
+                        fontFamily: "Core Sans G",
+                        color: blackText,
+                      )
+                  ),
+                  onPressed: () {
+                    //                  Navigator.pushNamed(context, AppRoutes.map);
+                  },
                 ),
-                onPressed: () {
-//                  Navigator.pushNamed(context, AppRoutes.map);
-                },
+              ),
+              SizedBox(
+                height: getSizeHeight(context, 2),
+              ),
+              SizedBox(
+                height: getSizeHeight(context, 5),
+                child: FlatButton(
+                  color: paleGreenTextBackground,
+                  child: Text(
+                      "Next week",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: getSizeHeight(context, 2),
+                        fontFamily: "Core Sans G",
+                        color: blackText,
+                      )
+                  ),
+                  onPressed: () {
+                    //                  Navigator.pushNamed(context, AppRoutes.map);
+                  },
+                ),
+              ),
+              SizedBox(
+                height: getSizeHeight(context, 2),
+              ),
+              SizedBox(
+                height: getSizeHeight(context, 5),
+                child: FlatButton(
+                  color: paleGreenTextBackground,
+                  child: Text(
+                      "Specific day",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: getSizeHeight(context, 2),
+                        fontFamily: "Core Sans G",
+                        color: blackText,
+                      )
+                  ),
+                  onPressed: () {
+                    //                  Navigator.pushNamed(context, AppRoutes.map);
+                  },
+                ),
+              ),
+              SizedBox(
+                height: getSizeHeight(context, 5),
+              ),
+              //TODO: If any of the radio buttons above is selected, this button's state changes and it becomes clickable
+              SizedBox(
+                height: getSizeHeight(context, 8),
+                width: getSizeWidth(context, 1),
+                child: FlatButton(
+                  color: purpleButtonNonActive,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(12.0),
+                      side: BorderSide(color: Colors.purple)
+                  ),
+                  child: Text(
+                      "Confirm order",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: getSizeHeight(context, 2),
+                        fontFamily: "Core Sans G",
+                        color: turquoiseLightButton,
+                      )
+                  ),
+                  onPressed: () {
+                    //                  Navigator.pushNamed(context, AppRoutes.map);
+                  },
+                ),
               ),
             ]
           ),

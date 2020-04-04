@@ -8,4 +8,4 @@ const turquoiseDarkButton = const Color(0xff67A8AA);
 const paleGreenTextBackground = const Color(0xffF2FDFF);
 const nonBlackText = const Color(0xff101935);
 const blackText = const Color(0xff000000);
-
+const whiteText = const Color(0xff);
