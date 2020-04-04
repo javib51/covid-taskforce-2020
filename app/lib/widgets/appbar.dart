@@ -1,3 +1,4 @@
+import 'package:bordered_text/bordered_text.dart';
 import 'package:covid/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -36,13 +37,18 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             Column(
               children: <Widget>[
-                Text(
-                  "Community",
-                  style: TextStyle(
-                    fontSize: isTitleEmpty ? 32 : 24,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xff9AD4D6),
-                    fontFamily: "Core Sans G",
+                BorderedText(
+                  strokeWidth: 3.0,
+                  child: Text(
+                    "Community",
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      decorationColor: Color(0xff564787),
+                      fontSize: isTitleEmpty ? 32 : 24,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xff9AD4D6),
+                      fontFamily: "Core Sans G",
+                    ),
                   ),
                 ),
                 isTitleEmpty
