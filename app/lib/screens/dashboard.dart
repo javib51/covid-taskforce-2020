@@ -1,3 +1,4 @@
+import 'package:covid/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -12,7 +13,16 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   Widget _buildBody(BuildContext context) {
-    return Container();
+    return Container(
+      child: Center(
+        child: FlatButton(
+          child: Text("Map"),
+          onPressed: () {
+            Navigator.pushNamed(context, AppRoutes.map);
+          },
+        ),
+      ),
+    );
   }
 
   @override
