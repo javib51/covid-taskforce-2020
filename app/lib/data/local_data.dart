@@ -1,4 +1,5 @@
 import 'package:covid/data/groceries.dart' as gc;
+import 'package:covid/data/inventory_item.dart';
 import 'package:covid/data/item.dart';
 
 class LocalData {
@@ -23,6 +24,23 @@ class LocalData {
         price: 2.4,
         measureType: "kg",
         photo: 'assets/Group.png',
+        units: 1
+    ),
+  ];
+
+  List<InventoryItem> inventory = [
+    InventoryItem(
+        name: "name",
+        expirationDays: 2,
+        expirationTime: DateTime.now(),
+        photo: 'assets/Group.png',
+        units: 1
+    ),
+    InventoryItem(
+        name: "name 1",
+        expirationDays: 0,
+        expirationTime: DateTime.now(),
+        photo: 'assets/Group 4.png',
         units: 1
     ),
   ];
