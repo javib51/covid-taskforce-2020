@@ -79,6 +79,7 @@ class _LandingPageState extends State<LandingPage> with TickerProviderStateMixin
                   _tabBarHeight -
                   _bottomBarHeight,
               child: new TabBarView(
+                physics: NeverScrollableScrollPhysics(),
                 key: _pageKey,
                 controller: tabController,
                 children: <Widget>[
