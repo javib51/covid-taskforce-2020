@@ -8,12 +8,12 @@ import 'package:covid/data/item.dart';
 import '../utils.dart';
 import '../utils.dart';
 
-class PlaceSelection extends StatefulWidget {
+class PickupSelection extends StatefulWidget {
   @override
-  State<PlaceSelection> createState() => _PlaceSelectionState();
+  State<PickupSelection> createState() => _PickupSelectionState();
 }
 
-class _PlaceSelectionState extends State<PlaceSelection> {
+class _PickupSelectionState extends State<PickupSelection> {
   @override
   void initState() {
     super.initState();
