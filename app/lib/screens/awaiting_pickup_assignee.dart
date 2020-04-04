@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covid/data/local_data.dart';
 import 'package:covid/data/item.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../utils.dart';
 import '../utils.dart';
@@ -11,12 +12,12 @@ import '../utils.dart';
 import '../utils.dart';
 import '../utils.dart';
 
-class OrderConfirmed extends StatefulWidget {
+class AwaitPickAss extends StatefulWidget {
   @override
-  State<OrderConfirmed> createState() => _OrderConfirmedState();
+  State<AwaitPickAss> createState() => _AwaitPickAssState();
 }
 
-class _OrderConfirmedState extends State<OrderConfirmed> {
+class _AwaitPickAssState extends State<AwaitPickAss> {
   @override
   void initState() {
     super.initState();
@@ -41,7 +42,7 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
           height: getSizeHeight(context, 7.2),
         ),
         Container(
-          width: getSizeWidth(context, 50),
+          width: getSizeWidth(context, 60),
           child: new DecoratedBox(
             decoration: new BoxDecoration(
               color: Color(0xffDBCBD8),
@@ -67,7 +68,7 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     SizedBox(
-                      height: getSizeHeight(context, 10),
+                      height: getSizeHeight(context, 1),
                     ),
                     new Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -80,71 +81,76 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
                                       right: getSizeWidth(context, 2)),
                                   child: new Column(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.start,
                                       children: <Widget>[
                                         Container(
                                           alignment: Alignment(0, 0),
-                                          width: getSizeWidth(context, 50),
+                                          width: getSizeWidth(context, 45),
                                           child: new RichText(
-                                            textAlign: TextAlign.center,
+                                              textAlign: TextAlign.left,
                                               text: new TextSpan(children: [
-                                            new TextSpan(
-                                                style: const TextStyle(
-                                                    color: purpleButtonActive,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontFamily: "Core Sans G",
-                                                    fontStyle: FontStyle.normal,
-                                                    fontSize: 24.0),
-                                                text:
-                                                    "Your order has been confirmed! Your order number is "),
-                                            new TextSpan(
-                                                style: const TextStyle(
-                                                    color: purpleButtonActive,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontFamily: "Core Sans G",
-                                                    fontStyle: FontStyle.normal,
-                                                    decoration: TextDecoration
-                                                        .underline,
-                                                    fontSize: 24.0),
-                                                text: "4587"),
-                                          ])),
+                                                new TextSpan(
+                                                    style: const TextStyle(
+                                                        color: purpleButtonActive,
+                                                        fontWeight: FontWeight.w500,
+                                                        fontFamily: "Core Sans G",
+                                                        fontStyle: FontStyle.normal,
+                                                        fontSize: 24.0),
+                                                    text:
+                                                    "Order "),
+                                                new TextSpan(
+                                                    style: const TextStyle(
+                                                        color: purpleButtonActive,
+                                                        fontWeight: FontWeight.w500,
+                                                        fontFamily: "Core Sans G",
+                                                        fontStyle: FontStyle.normal,
+                                                        decoration: TextDecoration
+                                                            .underline,
+                                                        fontSize: 24.0),
+                                                    text: "# 4587"),
+                                              ])),
                                         ),
                                       ]))),
                         ]),
                     SizedBox(
-                      height: getSizeHeight(context, 10),
+                      height: getSizeHeight(context, 1),
                     ),
                     Container(
-                        width: getSizeWidth(context, 70),
-                        color: Colors.white,
-                        alignment: Alignment(-1, -1),
+                        width: getSizeWidth(context, 75),
+                        alignment: Alignment(0, 0),
                         padding: EdgeInsets.all(4),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
+                        SpinKitPumpingHeart(
+                        color: Colors.black,
+                          size: 25.0),
+//                            new Icon(
+//                              Icons.hourglass_empty,
+//                              color: Colors.black,
+//                              size: 25.0,
+//                            ),
                             new Expanded(
                                 child: new Padding(
                                     padding: new EdgeInsets.only(
-                                        left: getSizeWidth(context, 5),
-                                        right: getSizeWidth(context, 5),
-                                    top: getSizeHeight(context, 5),
-                                    bottom: getSizeHeight(context, 5)),
+                                        left: getSizeWidth(context, 3),
+                                        right: getSizeWidth(context, 5)),
                                     child: new Column(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.start,
+                                        MainAxisAlignment.start,
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Container(
                                             alignment: Alignment(-1, -1),
                                             child: Text(
-                                              "You will be notified when someone can confirm picking up your order",
+                                              "Awaiting assigned pickup",
                                               style: TextStyle(
                                                   color: Colors.black,
-                                                  fontWeight: FontWeight.w600,
+                                                  fontWeight: FontWeight.w500,
                                                   fontFamily: "Core Sans G",
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 18),
@@ -155,7 +161,7 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
                           ],
                         )),
                     SizedBox(
-                      height: getSizeHeight(context, 20),
+                      height: getSizeHeight(context, 1),
                     ),
                   ],
                 ),
