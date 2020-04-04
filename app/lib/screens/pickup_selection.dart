@@ -2,6 +2,7 @@ import 'package:covid/utils.dart';
 import 'package:covid/utils/const_variables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:covid/widgets/appbar.dart';
 import 'package:covid/data/local_data.dart';
 import 'package:covid/data/item.dart';
 
@@ -72,7 +73,6 @@ class _PickupSelectionState extends State<PickupSelection> {
                       style: TextStyle(
                         color: Color(0xff564787),
                         fontSize: 24,
-                        fontFamily: "Core Sans G",
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -91,7 +91,6 @@ class _PickupSelectionState extends State<PickupSelection> {
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 14,
-                                      fontFamily: "Core Sans G",
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ))
@@ -113,7 +112,6 @@ class _PickupSelectionState extends State<PickupSelection> {
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 14,
-                              fontFamily: "Core Sans G",
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -125,7 +123,6 @@ class _PickupSelectionState extends State<PickupSelection> {
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 15,
-                              fontFamily: "Core Sans G",
                               fontWeight: FontWeight.w800,
                             ),
                           )
@@ -143,7 +140,6 @@ class _PickupSelectionState extends State<PickupSelection> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 14,
-                          fontFamily: "Core Sans G",
                           fontWeight: FontWeight.w500,
                           fontStyle: FontStyle.italic,
                         ),
@@ -242,7 +238,6 @@ class _PickupSelectionState extends State<PickupSelection> {
                                               style: TextStyle(
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.w600,
-                                                  fontFamily: "Core Sans G",
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10),
                                               textAlign: TextAlign.left,
@@ -410,21 +405,7 @@ class _PickupSelectionState extends State<PickupSelection> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: new Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(
-            color: Colors.white, //change your color here
-          ),
-          title: Text(
-            "Community",
-            style: TextStyle(
-              color: Color(0xff9AD4D6),
-              fontSize: 24,
-              fontFamily: "Core Sans G",
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
+        appBar: MyCustomAppBar(title: "Supermarket X", height: 90),
         body: _buildBody(context),
       ),
     );
