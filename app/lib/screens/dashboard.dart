@@ -40,6 +40,8 @@ class _DashboardPageState extends State<DashboardPage> {
               child: Text("Landing page"),
               onPressed: () {
                 Navigator.pushNamed(context, AppRoutes.landingPage);
+              },),
+            FlatButton(
               child: Text("pickupselection"),
               onPressed: () {
                 Navigator.pushNamed(context, AppRoutes.pickupselection);
