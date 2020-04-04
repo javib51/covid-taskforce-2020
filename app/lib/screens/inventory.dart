@@ -1,14 +1,9 @@
-import 'dart:async';
-
-import 'package:covid/data/groceries.dart';
-import 'package:covid/data/item.dart';
+import 'package:covid/data/inventory_item.dart';
 import 'package:covid/data/local_data.dart';
 import 'package:covid/utils.dart';
-import 'package:covid/widgets/appbar.dart';
+import 'package:covid/utils/const_variables.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:latlong/latlong.dart' as lt;
+import 'package:intl/intl.dart';
 
 class InventoryPage extends StatefulWidget {
   @override
@@ -16,7 +11,8 @@ class InventoryPage extends StatefulWidget {
 }
 
 class _InventoryPageState extends State<InventoryPage> {
-  List<Item> items;
+  List<InventoryItem> items;
+
   @override
   void initState() {
     super.initState();
@@ -28,14 +24,16 @@ class _InventoryPageState extends State<InventoryPage> {
         shrinkWrap: true,
         itemCount: items.length,
         separatorBuilder: (context, index) => Divider(
-          color: Color(0xff9AD4D6),
-          thickness: 2,
-        ),
+              color: Color(0xff9AD4D6),
+              thickness: 2,
+            ),
         itemBuilder: (BuildContext context, int index) {
-          Item item = items[index];
+          InventoryItem item = items[index];
+          int daysToExpire =
+              getExpirationDays(item.expirationDays, item.expirationTime);
           return Container(
             margin: EdgeInsets.only(top: getSizeHeight(context, 2)),
-            height: getSizeHeight(context, 10),
+//            height: getSizeHeight(context, 10),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -53,6 +51,7 @@ class _InventoryPageState extends State<InventoryPage> {
                   width: getSizeWidth(context, 7),
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(
                       height: getSizeHeight(context, 0.7),
@@ -66,77 +65,82 @@ class _InventoryPageState extends State<InventoryPage> {
                       ),
                     ),
                     Text(
-                      item.available ? "Available" : "Out of Order",
+                      'Bought ' +
+                          DateFormat('yyyy-MM-dd').format(item.expirationTime),
                       style: TextStyle(
-                        color: Color(0xff9AD4D6),
+                        color: Color(0xffA19C9C),
                         fontStyle: FontStyle.italic,
                         fontSize: 12,
                         fontFamily: "Core Sans G",
                       ),
                     ),
-                  ],
-                ),
-                SizedBox(
-                  width: getSizeWidth(context, 10),
-                ),
-                Column(
-                  children: <Widget>[
                     SizedBox(
-                      height: getSizeHeight(context, 0.9),
+                      height: getSizeHeight(context, 1),
                     ),
-                    Text(
-                      "${item.price}€",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Color(0xff564787),
-                        fontFamily: "Core Sans G",
-                      ),
-                    ),
-                    Text(
-                      "per ${item.measureType}",
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Color(0xffA19C9C),
-                        fontFamily: "Core Sans G",
-                      ),
-                    ),
+                    daysToExpire != 0
+                        ? Container()
+                        : SizedBox(
+                            height: getSizeHeight(context, 5),
+                            width: getSizeWidth(context, 25),
+                            child: FlatButton(
+                              color: purpleButtonNonActive,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(12.0),
+                                  side: BorderSide(color: Colors.purple)),
+                              child: Text("Order More",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 12,
+                                    fontFamily: "Core Sans G",
+                                    color: turquoiseLightButton,
+                                  )),
+                              onPressed: () {
+                                print("order more");
+                              },
+                            ),
+                          ),
                   ],
                 ),
                 SizedBox(
                   width: getSizeWidth(context, 12),
                 ),
+                daysToExpire == 0
+                    ? Image.asset('assets/missing.png')
+                    : Image.asset('assets/check.png'),
+                SizedBox(
+                  width: getSizeWidth(context, 1),
+                ),
                 Column(
                   children: <Widget>[
                     Text(
-                      "${item.units}",
+                      daysToExpire.toString(),
                       style: TextStyle(
-                        fontSize: 20,
-                        color: Color(0xff9AD4D6),
+                        color: daysToExpire == 0
+                            ? Color(0xff101935)
+                            : Color(0xff9AD4D6),
+                        fontStyle: FontStyle.italic,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: "Core Sans G Rounded",
+                      ),
+                    ),
+                    Text(
+                      "days",
+                      style: TextStyle(
+                        color: daysToExpire == 0
+                            ? Color(0xff101935)
+                            : Color(0xff9AD4D6),
+                        fontStyle: FontStyle.italic,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
                         fontFamily: "Core Sans G",
                       ),
                     ),
-                    Row(
-                      children: <Widget>[
-//                        IconButton(icon: ,)
-                        new IconButton(
-                          icon: new Image.asset('assets/circle-minus.png'),
-                          onPressed: () {
-                            if (item.units > 1) {
-                              item.units--;
-                              setState(() {});
-                            }
-                          },
-                        ),
-                        new IconButton(
-                          icon: new Image.asset('assets/circle-plus.png'),
-                          onPressed: () {
-                            item.units++;
-                            setState(() {});
-                          },
-                        ),
-                      ],
-                    ),
                   ],
+                ),
+                SizedBox(
+                  width: getSizeWidth(context, 2),
                 ),
               ],
             ),
@@ -146,13 +150,9 @@ class _InventoryPageState extends State<InventoryPage> {
 
   @override
   Widget build(BuildContext context) {
-    items = LocalData.instance.basket;
+    items = LocalData.instance.inventory;
     return Column(
       children: <Widget>[
-        Divider(
-          color: Color(0xff9AD4D6),
-          thickness: 2,
-        ),
         _buildItems(context),
         Divider(
           color: Color(0xff9AD4D6),

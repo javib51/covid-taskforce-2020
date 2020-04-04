@@ -48,6 +48,7 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                   width: getSizeWidth(context, 7),
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(
                       height: getSizeHeight(context, 0.7),

@@ -17,3 +17,8 @@ double getSizeWidth(BuildContext context, double percentage,
     return MediaQuery.of(context).size.width * (percentage / 100);
   }
 }
+
+int getExpirationDays(int days,
+    DateTime date) {
+  return days - date.difference(DateTime.now()).inDays;
+}
