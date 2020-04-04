@@ -1,7 +1,12 @@
 import 'package:covid/app_routes.dart';
 import 'package:covid/keys.dart';
 import 'package:covid/screens/dashboard.dart';
+import 'package:covid/screens/order_confirmed.dart';
+import 'package:covid/utils/const_variables.dart';
 import 'package:flutter/material.dart';
+import 'package:covid/screens/pickup_selection.dart';
+
+import 'screens/dashboard.dart';
 
 void main() => runApp(App());
 
@@ -29,10 +34,10 @@ class _AppState extends State<App> {
       theme: new ThemeData(
         brightness: Brightness.light,
         // ignore: strong_mode_invalid_cast_new_expr
-        primaryColor: Color(0xff2f3f9e),
+        primaryColor: purpleButtonActive,
         buttonColor: Colors.white,
 //        appBarTheme: AppBarTheme(color: Colors.white),
-        accentColor: Color(0xffec8b5e),
+        accentColor: turquoiseDarkButton,
         backgroundColor: Colors.white,
       ),
       //home: new MyHomePage(key: new Key("aaaaa"),title: "My app -" + Config.helloMessage,),

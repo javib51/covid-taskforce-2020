@@ -1,5 +1,6 @@
 import 'package:covid/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:covid/screens/pickup_selection.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -39,6 +40,9 @@ class _DashboardPageState extends State<DashboardPage> {
               child: Text("Landing page"),
               onPressed: () {
                 Navigator.pushNamed(context, AppRoutes.landingPage);
+              child: Text("pickupselection"),
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.pickupselection);
               },
             )
           ],

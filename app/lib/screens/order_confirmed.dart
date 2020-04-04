@@ -8,12 +8,12 @@ import 'package:covid/data/item.dart';
 import '../utils.dart';
 import '../utils.dart';
 
-class PickupSelection extends StatefulWidget {
+class OrderConfirmed extends StatefulWidget {
   @override
-  State<PickupSelection> createState() => _PickupSelectionState();
+  State<OrderConfirmed> createState() => _OrderConfirmedState();
 }
 
-class _PickupSelectionState extends State<PickupSelection> {
+class _OrderConfirmedState extends State<OrderConfirmed> {
   @override
   void initState() {
     super.initState();
@@ -66,6 +66,53 @@ class _PickupSelectionState extends State<PickupSelection> {
                     SizedBox(
                       height: getSizeHeight(context, 1),
                     ),
+    new Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      new Expanded(
+          child: new Padding(
+              padding: new EdgeInsets.only(
+                  left: getSizeWidth(context, 1),
+                  right: getSizeWidth(context, 2)),
+              child: new Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      alignment: Alignment(-1, -1),
+                      child: Text(
+                        "If you are at risk, please consider getting a pickup instead of picking up the order yourself",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: "Core Sans G",
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10),
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                  ]))),
+      ]),
+//                    child: new RichText(
+//                        text: new TextSpan(children: [
+//                          new TextSpan(
+//                              style: const TextStyle(
+//                                  color: logo_blue,
+//                                  fontWeight: FontWeight.w300,
+//                                  fontFamily: "Roboto",
+//                                  fontStyle: FontStyle.normal,
+//                                  fontSize: 13.0),
+//                              text: _getRentalPeriod() + ", "),
+//                          new TextSpan(
+//                              style: const TextStyle(
+//                                  color: logo_orange,
+//                                  fontWeight: FontWeight.w300,
+//                                  fontFamily: "Roboto",
+//                                  fontStyle: FontStyle.normal,
+//                                  fontSize: 12.0),
+//                              text: _getRentalPrice()),
+//                        ])),
                     Text(
                       "Shopping List",
                       textAlign: TextAlign.center,
@@ -87,14 +134,14 @@ class _PickupSelectionState extends State<PickupSelection> {
                         children: <Widget>[
                           ...items
                               .map((item) => Text(
-                                    item.name,
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                      fontFamily: "Core Sans G",
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ))
+                            item.name,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontFamily: "Core Sans G",
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ))
                               .toList()
                         ],
                       ),
@@ -258,150 +305,6 @@ class _PickupSelectionState extends State<PickupSelection> {
           ),
         ),
 
-//        child: new Icon(
-//          Icons.cached,
-//          color: Colors.white,
-//          size: 25.0,
-//        ),
-//        Text(
-//          "Wooho! 🎉",
-//          textAlign: TextAlign.center,
-//          style: TextStyle(
-//            color: Color(0xff2f3f9e),
-//            fontSize: 20,
-//            fontFamily: "Avenir",
-//            fontWeight: FontWeight.w500,
-//          ),
-//        ),
-//        SizedBox(
-//          height: getSizeHeight(context, 1),
-//        ),
-//        Container(
-//          width: getSizeWidth(context, 50),
-//          child: Text(
-//            "You accepted the following Savings challenge:",
-//            maxLines: 3,
-//            textAlign: TextAlign.center,
-//            style: TextStyle(
-//              color: Color(0xff2f3f9e),
-//              fontSize: 18,
-//              fontFamily: "Avenir",
-//              fontWeight: FontWeight.w300,
-//            ),
-//          ),
-//        ),
-//        SizedBox(
-//          height: getSizeHeight(context, 5.9),
-//        ),
-//        _buildChallenge(context, "Starbucks Purchase",
-//            "Save 105€/month by not buying this", "./assets/images/coffee.png"),
-//        SizedBox(
-//          height: getSizeHeight(context, 3),
-//        ),
-//        Container(
-//          width: getSizeWidth(context, 50),
-//          child: new RichText(
-//            maxLines: 5,
-//            textAlign: TextAlign.center,
-//            text: TextSpan(
-//              children: <TextSpan>[
-//                new TextSpan(
-//                  text: 'With each Starbucks Purchase that you do not take, ',
-//                  style: TextStyle(
-//                    color: Color(0xff2f3f9e),
-//                    fontSize: 18,
-//                    fontFamily: "Avenir",
-//                    fontWeight: FontWeight.w300,
-//                  ),
-//                ),
-//                new TextSpan(
-//                  text: '€3.50 ',
-//                  style: TextStyle(
-//                    color: Color(0xff2f3f9e),
-//                    fontSize: 18,
-//                    fontFamily: "Avenir",
-//                    fontWeight: FontWeight.w400,
-//                  ),
-//                ),
-//                new TextSpan(
-//                  text: 'will be transferred to your wishlist savings!',
-//                  style: TextStyle(
-//                    color: Color(0xff2f3f9e),
-//                    fontSize: 18,
-//                    fontFamily: "Avenir",
-//                    fontWeight: FontWeight.w300,
-//                  ),
-//                ),
-//              ],
-//            ),
-//          ),
-//        ),
-//        SizedBox(
-//          height: getSizeHeight(context, 3),
-//        ),
-//        Container(
-//          width: getSizeWidth(context, 50),
-//          child: Text(
-//            "You can transfer the savings back to your main wallet anytime.",
-//            maxLines: 3,
-//            textAlign: TextAlign.center,
-//            style: TextStyle(
-//              color: Color(0xff2f3f9e),
-//              fontSize: 18,
-//              fontFamily: "Avenir",
-//              fontWeight: FontWeight.w300,
-//            ),
-//          ),
-//        ),
-//        SizedBox(
-//          height: getSizeHeight(context, 3),
-//        ),
-//        Text(
-//          "Good Luck!",
-//          textAlign: TextAlign.center,
-//          style: TextStyle(
-//            color: Color(0xff2f3f9e),
-//            fontSize: 20,
-//            fontFamily: "Avenir",
-//            fontWeight: FontWeight.w500,
-//          ),
-//        ),
-//        SizedBox(
-//          height: getSizeHeight(context, 4),
-//        ),
-//        Container(
-//          height: getSizeWidth(context, 17),
-//          width: getSizeWidth(context, 17),
-//          child: new DecoratedBox(
-//            decoration: new BoxDecoration(
-//              borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
-//            ),
-//            child: Image.asset("./assets/images/luck.png", fit: BoxFit.contain),
-//          ),
-//        ),
-//        SizedBox(
-//          height: getSizeHeight(context, 4),
-//        ),
-//        Container(
-//          height: getSizeHeight(context, 5.6),
-//          width: getSizeWidth(context, 10),
-//          child: RaisedButton(
-//            child: Text(
-//              "BACK TO HOME",
-//              style: TextStyle(
-//                fontSize: 14,
-//                fontFamily: "Avenir",
-//                fontWeight: FontWeight.w400,
-//                color: Colors.white,
-//              ),
-//            ),
-//            color: Color(0xff2f3f9e),
-//            onPressed: () {},
-//          ),
-//        ),
-//        SizedBox(
-//          height: getSizeHeight(context, 5),
-//        ),
       ],
     );
   }
