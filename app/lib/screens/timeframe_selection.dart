@@ -1,12 +1,12 @@
-import 'package:covid/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:covid/utils/const_variables.dart';
 
-class DashboardPage extends StatefulWidget {
+class TimeframeSelectionPage extends StatefulWidget {
   @override
-  State<DashboardPage> createState() => _DashboardPageState();
+  State<TimeframeSelectionPage> createState() => _TimeframeSelectionPageState();
 }
 
-class _DashboardPageState extends State<DashboardPage> {
+class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
   @override
   void initState() {
     super.initState();
@@ -14,25 +14,26 @@ class _DashboardPageState extends State<DashboardPage> {
 
   Widget _buildBody(BuildContext context) {
     return Container(
+      color: purpleButtonActive,
       child: Center(
         child: ListView(
           children: <Widget>[
             FlatButton(
               child: Text("Map"),
               onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.map);
+//                Navigator.pushNamed(context, AppRoutes.map);
               },
             ),
             FlatButton(
               child: Text("Shopping Basket"),
               onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.shoppingBasket);
+//                Navigator.pushNamed(context, AppRoutes.shoppingBasket);
               },
             ),
             FlatButton(
               child: Text("Timeframe Selection"),
               onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.timeframeSelection);
+//                Navigator.pushNamed(context, AppRoutes.timeframeSelection);
               },
             )
           ],
@@ -51,7 +52,7 @@ class _DashboardPageState extends State<DashboardPage> {
             color: Colors.white, //change your color here
           ),
           title: Text(
-            "Dashboard",
+            "Timeframe Selection",
             style: TextStyle(
               color: Colors.white,
               fontSize: 20,
