@@ -15,11 +15,21 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget _buildBody(BuildContext context) {
     return Container(
       child: Center(
-        child: FlatButton(
-          child: Text("Map"),
-          onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.map);
-          },
+        child: ListView(
+          children: <Widget>[
+            FlatButton(
+              child: Text("Map"),
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.map);
+              },
+            ),
+            FlatButton(
+              child: Text("SHopping Basket"),
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.shoppingBasket);
+              },
+            ),
+          ],
         ),
       ),
     );
