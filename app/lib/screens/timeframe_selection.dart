@@ -1,5 +1,6 @@
 import 'package:covid/utils.dart';
 import 'package:covid/utils/const_variables.dart';
+import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 
 class TimeframeSelectionPage extends StatefulWidget {
@@ -22,7 +23,7 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
           left: getSizeHeight(context, 2),
           right: getSizeHeight(context, 2),
           top: getSizeHeight(context, 2),
-          bottom: getSizeHeight(context, 10)),
+          bottom: getSizeHeight(context, 5)),
       decoration: new BoxDecoration(
           color: purpleBackground,
           borderRadius: new BorderRadius.all(const Radius.circular(6.0))),
@@ -177,30 +178,7 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: new Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color(0xff141a46),
-          iconTheme: IconThemeData(
-            color: Colors.white, //change your color here
-          ),
-          title: Text(
-            "Timeframe Selection",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontFamily: "Avenir",
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          leading: Container(),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.settings),
-              onPressed: () {
-//                Navigator.pushNamed(context, AppRoutes.value_settings);
-              },
-            ),
-          ],
-        ),
+        appBar: MyCustomAppBar(title: "Supermarket X", height: 90),
         body: _buildBody(context),
       ),
     );

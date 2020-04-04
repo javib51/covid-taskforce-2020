@@ -44,10 +44,9 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     style: TextStyle(
                       decoration: TextDecoration.none,
                       decorationColor: Color(0xff564787),
-                      fontSize: isTitleEmpty ? 32 : 24,
-                      fontWeight: FontWeight.w500,
+                      fontSize: isTitleEmpty ? 32 : 32,
+                      fontWeight: FontWeight.w800,
                       color: Color(0xff9AD4D6),
-                      fontFamily: "Core Sans G",
                     ),
                   ),
                 ),
@@ -56,9 +55,8 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     : Text(
                         title,
                         style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Core Sans G",
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
               ],
