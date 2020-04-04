@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:covid/utils/const_variables.dart';
 
 class TimeframeSelectionPage extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
 
   Widget _buildBody(BuildContext context) {
     return Container(
-      color: Colors.redAccent,
+      color: purpleButtonActive,
       child: Center(
         child: ListView(
           children: <Widget>[
