@@ -13,17 +13,21 @@ import '../utils.dart';
 import '../utils.dart';
 import '../utils.dart';
 import '../utils.dart';
+import '../utils.dart';
+import '../utils.dart';
 
-class PickupScheduled extends StatefulWidget {
+class PickupOnTheWay extends StatefulWidget {
   @override
-  State<PickupScheduled> createState() => _PickupScheduledState();
+  State<PickupOnTheWay> createState() => _PickupOnTheWayState();
 }
 
-class _PickupScheduledState extends State<PickupScheduled> {
+class _PickupOnTheWayState extends State<PickupOnTheWay> {
   @override
   void initState() {
     super.initState();
   }
+
+  bool clicked = false;
 
   String sum(List<Item> items) {
     double sum = 0;
@@ -135,14 +139,16 @@ class _PickupScheduledState extends State<PickupScheduled> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-//                        SpinKitPumpingHeart(
-//                        color: Colors.black,
-//                          size: 25.0),
-//                            new Icon(
-//                              Icons.hourglass_empty,
-//                              color: Colors.black,
-//                              size: 25.0,
-//                            ),
+                            clicked
+                                ? new Icon(
+                                    Icons.tag_faces,
+                                    color: Colors.black,
+                                    size: 25.0,
+                                  )
+                                : Container(),
+                            SizedBox(
+                              height: getSizeHeight(context, 0.5),
+                            ),
                             new Expanded(
                                 child: new Padding(
                                     padding: new EdgeInsets.only(
@@ -157,7 +163,9 @@ class _PickupScheduledState extends State<PickupScheduled> {
                                           Container(
                                             alignment: Alignment(-1, -1),
                                             child: Text(
-                                              "Yay! Pickup assigned!",
+                                              clicked
+                                                  ? "Order delivered"
+                                                  : "Order picked up!",
                                               style: TextStyle(
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.w500,
@@ -178,10 +186,12 @@ class _PickupScheduledState extends State<PickupScheduled> {
                         color: Color(0xff9AD4D6),
                         alignment: Alignment(0, 0),
                         padding: EdgeInsets.all(4),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                        child: Column(
                           children: <Widget>[
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
 //                        SpinKitPumpingHeart(
 //                        color: Colors.black,
 //                          size: 25.0),
@@ -190,36 +200,146 @@ class _PickupScheduledState extends State<PickupScheduled> {
 //                              color: Colors.black,
 //                              size: 25.0,
 //                            ),
-                            new Expanded(
-                                child: new Padding(
-                                    padding: new EdgeInsets.only(
-                                        left: getSizeWidth(context, 0),
-                                        right: getSizeWidth(context, 0),
-                                        top: getSizeHeight(context, 5),
-                                        bottom: getSizeHeight(context, 5)),
-                                    child: new Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: <Widget>[
-                                          Container(
-                                            alignment: Alignment(0, 0),
-                                            child: Text(
-                                              "Your order will be delivered to you: Monday, 6th April \n between 10AM - 1PM",
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontFamily: "Core Sans G",
-                                                  fontStyle: FontStyle.normal,
-                                                  height: 1.8,
-                                                  fontSize: 14),
-                                              textAlign: TextAlign.center,
-                                            ),
-                                          ),
-                                        ]))),
+                                new Expanded(
+                                    child: new Padding(
+                                        padding: new EdgeInsets.only(
+                                            left: getSizeWidth(context, 0),
+                                            right: getSizeWidth(context, 0),
+                                            top: getSizeHeight(context, 3),
+                                            bottom: getSizeHeight(context, 3)),
+                                        child: new Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: <Widget>[
+                                              Container(
+                                                alignment: Alignment(0, 0),
+                                                child: Text(
+                                                  clicked
+                                                      ? "Awesome!"
+                                                      : "Let us know once you have\n received your order!",
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontFamily: "Core Sans G",
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      height: 1.8,
+                                                      fontSize:
+                                                          clicked ? 24 : 14),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                            ]))),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                MaterialButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        clicked = true;
+                                      });
+                                    },
+                                    height: getSizeHeight(context, 7),
+                                    splashColor: Color(0xff67A8AA),
+                                    color: Colors.white,
+                                    elevation: 8,
+                                    highlightElevation: 2,
+                                    padding: EdgeInsets.all(0),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(8)),
+                                    child: Container(
+                                      child: Text(
+                                        "I got it!",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w600,
+                                            fontFamily: "SF Pro Display",
+                                            fontStyle: FontStyle.normal,
+                                            fontSize: 14),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    )),
+                                SizedBox(
+                                  width: getSizeWidth(context, 5),
+                                ),
+                                MaterialButton(
+                                    onPressed: () {},
+                                    height: getSizeHeight(context, 7),
+                                    splashColor: Color(0xff67A8AA),
+                                    color: Colors.white,
+                                    elevation: 8,
+                                    highlightElevation: 2,
+                                    padding: EdgeInsets.all(0),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(8)),
+                                    child: Container(
+                                      child: Text(
+                                        "Something's\nwrong",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w600,
+                                            fontFamily: "SF Pro Display",
+                                            fontStyle: FontStyle.normal,
+                                            fontSize: 15),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ))
+                              ],
+                            ),
+                            SizedBox(
+                              height: getSizeHeight(context, 2),
+                            ),
                           ],
-                        )),
+                        )
+//                        Row(
+//                          mainAxisAlignment: MainAxisAlignment.center,
+//                          crossAxisAlignment: CrossAxisAlignment.center,
+//                          children: <Widget>[
+////                        SpinKitPumpingHeart(
+////                        color: Colors.black,
+////                          size: 25.0),
+////                            new Icon(
+////                              Icons.hourglass_empty,
+////                              color: Colors.black,
+////                              size: 25.0,
+////                            ),
+//                            new Expanded(
+//                                child: new Padding(
+//                                    padding: new EdgeInsets.only(
+//                                        left: getSizeWidth(context, 0),
+//                                        right: getSizeWidth(context, 0),
+//                                        top: getSizeHeight(context, 5),
+//                                        bottom: getSizeHeight(context, 5)),
+//                                    child: new Column(
+//                                        mainAxisAlignment:
+//                                            MainAxisAlignment.center,
+//                                        crossAxisAlignment:
+//                                            CrossAxisAlignment.center,
+//                                        children: <Widget>[
+//                                          Container(
+//                                            alignment: Alignment(0, 0),
+//                                            child: Text(
+//                                              "Let us know once you have\n received your order!",
+//                                              style: TextStyle(
+//                                                  color: Colors.black,
+//                                                  fontWeight: FontWeight.w500,
+//                                                  fontFamily: "Core Sans G",
+//                                                  fontStyle: FontStyle.normal,
+//                                                  height: 1.8,
+//                                                  fontSize: 14),
+//                                              textAlign: TextAlign.center,
+//                                            ),
+//                                          ),
+//                                        ]))),
+//                          ],
+//                        )
+                        ),
                     SizedBox(
                       height: getSizeHeight(context, 8),
                     ),
@@ -231,9 +351,22 @@ class _PickupScheduledState extends State<PickupScheduled> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-                        SpinKitPumpingHeart(
-                        color: Colors.black,
-                          size: 85.0),
+                            Container(
+                              height: getSizeWidth(context, 20),
+                              width: getSizeWidth(context, 20),
+                              child: new DecoratedBox(
+                                decoration: new BoxDecoration(
+                                  borderRadius:
+                                  new BorderRadius.all(
+                                      new Radius.circular(45.0)),
+                                ),
+                                child: Image.asset(
+                                    "assets/guy_young.png",
+                                    fit: BoxFit.fill),
+                              ),
+                            ),
+//                            SpinKitPumpingHeart(
+//                                color: Colors.black, size: 85.0),
                             new Expanded(
                                 child: new Padding(
                                     padding: new EdgeInsets.only(
@@ -241,9 +374,9 @@ class _PickupScheduledState extends State<PickupScheduled> {
                                         right: getSizeWidth(context, 0)),
                                     child: new Column(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                            MainAxisAlignment.center,
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                            CrossAxisAlignment.center,
                                         children: <Widget>[
                                           Container(
                                             alignment: Alignment(-1, -1),
@@ -252,25 +385,25 @@ class _PickupScheduledState extends State<PickupScheduled> {
                                                 text: new TextSpan(children: [
                                                   new TextSpan(
                                                       style: const TextStyle(
-                                                          color:
-                                                          Colors.black,
+                                                          color: Colors.black,
                                                           fontWeight:
-                                                          FontWeight.w500,
+                                                              FontWeight.w500,
                                                           fontFamily:
-                                                          "Core Sans G",
+                                                              "Core Sans G",
                                                           fontStyle:
-                                                          FontStyle.normal,
+                                                              FontStyle.normal,
                                                           fontSize: 14.0),
-                                                      text: "Your designated pick-up is\n"),
+                                                      text:
+                                                          "Your designated pick-up is\n"),
                                                   new TextSpan(
                                                       style: const TextStyle(
                                                           color: Colors.black,
                                                           fontWeight:
-                                                          FontWeight.w500,
+                                                              FontWeight.w700,
                                                           fontFamily:
-                                                          "Core Sans G",
+                                                              "Core Sans G",
                                                           fontStyle:
-                                                          FontStyle.normal,
+                                                              FontStyle.normal,
                                                           fontSize: 24.0),
                                                       text: "John Smith"),
                                                 ])),

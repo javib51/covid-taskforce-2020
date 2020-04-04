@@ -11,13 +11,15 @@ import '../utils.dart';
 import '../utils.dart';
 import '../utils.dart';
 import '../utils.dart';
+import '../utils.dart';
+import '../utils.dart';
 
-class PickupPerAss extends StatefulWidget {
+class PickupScheduled extends StatefulWidget {
   @override
-  State<PickupPerAss> createState() => _PickupPerAssState();
+  State<PickupScheduled> createState() => _PickupScheduledState();
 }
 
-class _PickupPerAssState extends State<PickupPerAss> {
+class _PickupScheduledState extends State<PickupScheduled> {
   @override
   void initState() {
     super.initState();
@@ -81,9 +83,9 @@ class _PickupPerAssState extends State<PickupPerAss> {
                                       right: getSizeWidth(context, 2)),
                                   child: new Column(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                          MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: <Widget>[
                                         Container(
                                           alignment: Alignment(0, 0),
@@ -93,21 +95,29 @@ class _PickupPerAssState extends State<PickupPerAss> {
                                               text: new TextSpan(children: [
                                                 new TextSpan(
                                                     style: const TextStyle(
-                                                        color: purpleButtonActive,
-                                                        fontWeight: FontWeight.w500,
-                                                        fontFamily: "Core Sans G",
-                                                        fontStyle: FontStyle.normal,
+                                                        color:
+                                                            purpleButtonActive,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontFamily:
+                                                            "Core Sans G",
+                                                        fontStyle:
+                                                            FontStyle.normal,
                                                         fontSize: 24.0),
-                                                    text:
-                                                    "Order "),
+                                                    text: "Order "),
                                                 new TextSpan(
                                                     style: const TextStyle(
-                                                        color: purpleButtonActive,
-                                                        fontWeight: FontWeight.w500,
-                                                        fontFamily: "Core Sans G",
-                                                        fontStyle: FontStyle.normal,
-                                                        decoration: TextDecoration
-                                                            .underline,
+                                                        color:
+                                                            purpleButtonActive,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontFamily:
+                                                            "Core Sans G",
+                                                        fontStyle:
+                                                            FontStyle.normal,
+                                                        decoration:
+                                                            TextDecoration
+                                                                .underline,
                                                         fontSize: 24.0),
                                                     text: "# 4587"),
                                               ])),
@@ -140,9 +150,9 @@ class _PickupPerAssState extends State<PickupPerAss> {
                                         right: getSizeWidth(context, 5)),
                                     child: new Column(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.start,
+                                            MainAxisAlignment.start,
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Container(
                                             alignment: Alignment(-1, -1),
@@ -161,8 +171,138 @@ class _PickupPerAssState extends State<PickupPerAss> {
                           ],
                         )),
                     SizedBox(
-                      height: getSizeHeight(context, 1),
+                      height: getSizeHeight(context, 8),
                     ),
+                    Container(
+                        width: getSizeWidth(context, 65),
+                        color: Color(0xff9AD4D6),
+                        alignment: Alignment(0, 0),
+                        padding: EdgeInsets.all(4),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+//                        SpinKitPumpingHeart(
+//                        color: Colors.black,
+//                          size: 25.0),
+//                            new Icon(
+//                              Icons.hourglass_empty,
+//                              color: Colors.black,
+//                              size: 25.0,
+//                            ),
+                            new Expanded(
+                                child: new Padding(
+                                    padding: new EdgeInsets.only(
+                                        left: getSizeWidth(context, 0),
+                                        right: getSizeWidth(context, 0),
+                                        top: getSizeHeight(context, 5),
+                                        bottom: getSizeHeight(context, 5)),
+                                    child: new Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: <Widget>[
+                                          Container(
+                                            alignment: Alignment(0, 0),
+                                            child: Text(
+                                              "Your order will be delivered to you: Monday, 6th April \n between 10AM - 1PM",
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontFamily: "Core Sans G",
+                                                  fontStyle: FontStyle.normal,
+                                                  height: 1.8,
+                                                  fontSize: 14),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                        ]))),
+                          ],
+                        )),
+                    SizedBox(
+                      height: getSizeHeight(context, 8),
+                    ),
+                    Container(
+                        width: getSizeWidth(context, 75),
+                        alignment: Alignment(0, 0),
+                        padding: EdgeInsets.all(4),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              height: getSizeWidth(context, 20),
+                              width: getSizeWidth(context, 20),
+                              child: new DecoratedBox(
+                                decoration: new BoxDecoration(
+                                  borderRadius: new BorderRadius.all(
+                                      new Radius.circular(45.0)),
+                                ),
+                                child: Image.asset("assets/guy_young.png",
+                                    fit: BoxFit.fill),
+                              ),
+                            ),
+//                        SpinKitPumpingHeart(
+//                        color: Colors.black,
+//                          size: 85.0),
+                            new Expanded(
+                                child: new Padding(
+                                    padding: new EdgeInsets.only(
+                                        left: getSizeWidth(context, 7),
+                                        right: getSizeWidth(context, 0)),
+                                    child: new Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: <Widget>[
+                                          Container(
+                                            alignment: Alignment(-1, -1),
+                                            child: new RichText(
+                                                textAlign: TextAlign.center,
+                                                text: new TextSpan(children: [
+                                                  new TextSpan(
+                                                      style: const TextStyle(
+                                                          color: Colors.black,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontFamily:
+                                                              "Core Sans G",
+                                                          fontStyle:
+                                                              FontStyle.normal,
+                                                          fontSize: 14.0),
+                                                      text:
+                                                          "Your designated pick-up is\n"),
+                                                  new TextSpan(
+                                                      style: const TextStyle(
+                                                          color: Colors.black,
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                          fontFamily:
+                                                              "Core Sans G",
+                                                          fontStyle:
+                                                              FontStyle.normal,
+                                                          fontSize: 24.0),
+                                                      text: "John Smith"),
+                                                ])),
+                                          ),
+                                        ]))),
+                          ],
+                        )),
+//                    Container(
+//                      height: getSizeWidth(context, 17),
+//                      width: getSizeWidth(context, 17),
+//                      child: new DecoratedBox(
+//                        decoration: new BoxDecoration(
+//                          color: Colors.white,
+//                          borderRadius:
+//                          new BorderRadius.all(new Radius.circular(10.0)),
+//                        ),
+//                        child: Image.asset("./assets/images/photo-camera.png",
+//                            fit: BoxFit.contain),
+//                      ),
+//                    ),
                   ],
                 ),
               ),

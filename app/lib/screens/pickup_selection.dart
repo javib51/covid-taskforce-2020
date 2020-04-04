@@ -178,7 +178,8 @@ class _PickupSelectionState extends State<PickupSelection> {
                                         fontSize: 15),
                                     textAlign: TextAlign.center,
                                   ),
-                                )))),
+                                ))
+                        )),
                     SizedBox(
                       height: getSizeHeight(context, 1),
                     ),
