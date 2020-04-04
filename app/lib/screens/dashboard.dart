@@ -17,12 +17,12 @@ class _DashboardPageState extends State<DashboardPage> {
       child: Center(
         child: ListView(
           children: <Widget>[
-            FlatButton(
-              child: Text("Map"),
-              onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.map);
-              },
-            ),
+//            FlatButton(
+//              child: Text("Map"),
+//              onPressed: () {
+//                Navigator.pushNamed(context, AppRoutes.map);
+//              },
+//            ),
             FlatButton(
               child: Text("Shopping Basket"),
               onPressed: () {
@@ -33,6 +33,12 @@ class _DashboardPageState extends State<DashboardPage> {
               child: Text("Timeframe Selection"),
               onPressed: () {
                 Navigator.pushNamed(context, AppRoutes.timeframeSelection);
+              },
+            ),
+            FlatButton(
+              child: Text("Landing page"),
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.landingPage);
               },
             )
           ],
