@@ -3,11 +3,14 @@ import 'package:covid/keys.dart';
 import 'package:covid/screens/awaiting_pickup_assignee.dart';
 import 'package:covid/screens/dashboard.dart';
 import 'package:covid/screens/order_confirmed.dart';
+import 'package:covid/screens/pickup_ontheway.dart';
 import 'package:covid/screens/pickup_person_assigned.dart';
+import 'package:covid/screens/pickup_scheduled.dart';
 import 'package:covid/utils/const_variables.dart';
 import 'package:flutter/material.dart';
 import 'package:covid/screens/pickup_selection.dart';
 
+import 'screens/dashboard.dart';
 import 'screens/dashboard.dart';
 import 'screens/dashboard.dart';
 

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:covid/app_routes.dart';
 import 'package:covid/data/groceries.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -56,7 +57,7 @@ class _MapPageState extends State<MapPage> {
     return GestureDetector(
       onTap: () {
 //        _gotoLocation(shop.position);
-        print("onTap item");
+        Navigator.pushNamed(context, AppRoutes.shoppingBasket);
       },
       child: Container(
         child: new FittedBox(
