@@ -13,30 +13,31 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
   }
 
   Widget _buildBody(BuildContext context) {
+
     return Container(
-      color: purpleButtonActive,
-      child: Center(
-        child: ListView(
-          children: <Widget>[
-            FlatButton(
-              child: Text("Map"),
-              onPressed: () {
-//                Navigator.pushNamed(context, AppRoutes.map);
-              },
-            ),
-            FlatButton(
-              child: Text("Shopping Basket"),
-              onPressed: () {
-//                Navigator.pushNamed(context, AppRoutes.shoppingBasket);
-              },
-            ),
-            FlatButton(
-              child: Text("Timeframe Selection"),
-              onPressed: () {
-//                Navigator.pushNamed(context, AppRoutes.timeframeSelection);
-              },
-            )
-          ],
+      margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 100.0),
+      decoration: new BoxDecoration(
+          color: purpleBackground,
+          borderRadius: new BorderRadius.all(const Radius.circular(6.0))
+      ),
+      child: new Container(
+        color: purpleButtonNonActive,
+        margin: const EdgeInsets.only(left: 50.0, right: 50.0, top: 80.0, bottom: 50.0),
+        child: Center(
+          child: ListView(
+            children: <Widget>[
+              Center(
+                child: Text(
+                  "Please select when you need the delivery latest by:",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      color: purpleButtonActive,
+                  )
+                ),
+              )
+            ]
+          ),
         ),
       ),
     );
