@@ -143,6 +143,7 @@ class _SelectionPickExtraPageState extends State<SelectionPickExtraPage> {
                       child: Container(
                           padding: EdgeInsets.all(getSizeWidth(context, 3)),
                           child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Visibility(
@@ -171,9 +172,10 @@ class _SelectionPickExtraPageState extends State<SelectionPickExtraPage> {
                                   children: [
                                     Container(
                                       height: getSizeHeight(context, 8),
-                                      padding: EdgeInsets.only(left: getSizeWidth(context, 10), right: getSizeWidth(context, 10)),
+                                      alignment: Alignment.center,
                                       child: FlatButton(
                                         color: purpleButtonActive,
+                                        padding: EdgeInsets.all(getSizeWidth(context, 5)),
                                         disabledColor: purpleButtonNonActive,
                                         shape: RoundedRectangleBorder(
                                           borderRadius: new BorderRadius.circular(12.0),
