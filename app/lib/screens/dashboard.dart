@@ -24,11 +24,17 @@ class _DashboardPageState extends State<DashboardPage> {
               },
             ),
             FlatButton(
-              child: Text("SHopping Basket"),
+              child: Text("Shopping Basket"),
               onPressed: () {
                 Navigator.pushNamed(context, AppRoutes.shoppingBasket);
               },
             ),
+            FlatButton(
+              child: Text("Timeframe Selection"),
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.timeframeSelection);
+              },
+            )
           ],
         ),
       ),
