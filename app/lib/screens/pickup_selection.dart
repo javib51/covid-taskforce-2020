@@ -60,8 +60,8 @@ class _PickupSelectionState extends State<PickupSelection> {
               child: Padding(
                 padding: EdgeInsets.only(
 //                  left: getSizeWidth(context, 4.7),
-                  //right: getSizeWidth(context, 4.2),
-                ),
+                    //right: getSizeWidth(context, 4.2),
+                    ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -86,6 +86,7 @@ class _PickupSelectionState extends State<PickupSelection> {
                       alignment: Alignment(-1, -1),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           ...items
                               .map((item) => Text(
@@ -95,6 +96,7 @@ class _PickupSelectionState extends State<PickupSelection> {
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
                                     ),
+                                    textAlign: TextAlign.left,
                                   ))
                               .toList()
                         ],
@@ -157,7 +159,8 @@ class _PickupSelectionState extends State<PickupSelection> {
                             width: getSizeWidth(context, 60),
                             child: MaterialButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, AppRoutes.timeframeSelectionPickup);
+                                  Navigator.pushNamed(context,
+                                      AppRoutes.timeframeSelectionPickup);
                                 },
                                 height: getSizeHeight(context, 8),
                                 splashColor: Color(0xff67A8AA),
@@ -178,8 +181,7 @@ class _PickupSelectionState extends State<PickupSelection> {
                                         fontSize: 15),
                                     textAlign: TextAlign.center,
                                   ),
-                                ))
-                        )),
+                                )))),
                     SizedBox(
                       height: getSizeHeight(context, 1),
                     ),
@@ -190,7 +192,8 @@ class _PickupSelectionState extends State<PickupSelection> {
                             width: getSizeWidth(context, 60),
                             child: MaterialButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, AppRoutes.timeframeSelection);
+                                  Navigator.pushNamed(
+                                      context, AppRoutes.timeframeSelection);
                                 },
                                 height: getSizeHeight(context, 8),
                                 splashColor: Color(0xff67A8AA),
@@ -235,8 +238,10 @@ class _PickupSelectionState extends State<PickupSelection> {
                                         left: getSizeWidth(context, 1),
                                         right: getSizeWidth(context, 2)),
                                     child: new Column(
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Container(
                                             alignment: Alignment(-1, -1),
