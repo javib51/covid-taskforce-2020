@@ -27,7 +27,7 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 left: getSizeWidth(context, 5),
               ),
               child: Image.asset(
-                "assets/Logo.png",
+                "assets/grape_logo.png",
                 width: 70,
                 height: 70,
               ),
@@ -40,7 +40,7 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 BorderedText(
                   strokeWidth: 3.0,
                   child: Text(
-                    "Community",
+                    "Grape",
                     style: TextStyle(
                       decoration: TextDecoration.none,
                       decorationColor: Color(0xff564787),
