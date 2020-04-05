@@ -9,10 +9,6 @@ import 'package:covid/data/item.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../utils.dart';
-import '../utils.dart';
-import '../utils.dart';
-import '../utils.dart';
-import '../utils.dart';
 
 class AwaitPickAss extends StatefulWidget {
   @override
@@ -137,8 +133,9 @@ class _AwaitPickAssState extends State<AwaitPickAss> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                         SpinKitPumpingHeart(
-                        color: Colors.black,
-                          size: 25.0),
+                        color: turquoiseDarkButton,
+                          size: 30.0
+                        ),
 //                            new Icon(
 //                              Icons.hourglass_empty,
 //                              color: Colors.black,
