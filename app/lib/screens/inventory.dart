@@ -51,61 +51,65 @@ class _InventoryPageState extends State<InventoryPage> {
                 SizedBox(
                   width: getSizeWidth(context, 7),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    SizedBox(
-                      height: getSizeHeight(context, 0.7),
-                    ),
-                    Text(
-                      item.name,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                        fontFamily: "Core Sans G",
+                Container(
+                  width: getSizeWidth(context, 40),
+                  child:
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(
+                        height: getSizeHeight(context, 0.7),
                       ),
-                    ),
-                    Text(
-                      'Bought ' +
-                          DateFormat('yyyy-MM-dd').format(item.expirationTime),
-                      style: TextStyle(
-                        color: Color(0xffA19C9C),
-                        fontStyle: FontStyle.italic,
-                        fontSize: 12,
-                        fontFamily: "Core Sans G",
+                      Text(
+                        item.name,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                          fontFamily: "Core Sans G",
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: getSizeHeight(context, 1),
-                    ),
-                    daysToExpire != 0
-                        ? Container()
-                        : SizedBox(
-                            height: getSizeHeight(context, 5),
-                            width: getSizeWidth(context, 25),
-                            child: FlatButton(
-                              color: purpleButtonActive,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      new BorderRadius.circular(12.0)),
-                              child: Text("Order More",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12,
-                                    fontFamily: "Core Sans G",
-                                    color: turquoiseLightButton,
-                                  )),
-                              onPressed: () {
-                                Navigator.pushNamed(
-                                    context, AppRoutes.shoppingBasket);
-                              },
-                            ),
-                          ),
-                  ],
+                      Text(
+                        'Bought ' +
+                            DateFormat('yyyy-MM-dd').format(item.expirationTime),
+                        style: TextStyle(
+                          color: Color(0xffA19C9C),
+                          fontStyle: FontStyle.italic,
+                          fontSize: 12,
+                          fontFamily: "Core Sans G",
+                        ),
+                      ),
+                      SizedBox(
+                        height: getSizeHeight(context, 1),
+                      ),
+                      daysToExpire != 0
+                          ? Container()
+                          : SizedBox(
+                        height: getSizeHeight(context, 5),
+                        width: getSizeWidth(context, 25),
+                        child: FlatButton(
+                          color: purpleButtonActive,
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                              new BorderRadius.circular(12.0)),
+                          child: Text("Order More",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 12,
+                                fontFamily: "Core Sans G",
+                                color: turquoiseLightButton,
+                              )),
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, AppRoutes.shoppingBasket);
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
-                  width: getSizeWidth(context, 15),
+                  width: getSizeWidth(context, 8),
                 ),
                 daysToExpire == 0
                     ? new Icon(Icons.error_outline,
