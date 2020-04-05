@@ -38,8 +38,9 @@ class _LandingPageState extends State<LandingPage> with TickerProviderStateMixin
           color: const Color(0xff564787),
         ),
         child: new TabBar(
-          labelPadding: EdgeInsets.only(top: 20),
+          labelPadding: EdgeInsets.only(left: 5,right: 5),
           indicatorColor: Colors.white,
+          unselectedLabelColor: Color(0xffDBCBD8),
           controller: controller,
           labelColor: Colors.white,
           labelStyle: const TextStyle(
@@ -47,7 +48,7 @@ class _LandingPageState extends State<LandingPage> with TickerProviderStateMixin
               fontWeight: FontWeight.w500,
 //              fontFamily: "Roboto",
 //              fontStyle: FontStyle.normal,
-              fontSize: 16.0),
+              fontSize: 15.0),
           tabs: <Widget>[
             new Tab(
               text: "Supermarkets",
