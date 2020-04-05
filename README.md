@@ -6,3 +6,6 @@ cd app
 flutter build apk
 ```
 The app will be on `build/app/outputs/apk/release/app-release.apk`
+
+
+Prototype link: https://www.figma.com/proto/KEgu7mYnyASWSOb58drNCX/Grape?node-id=17%3A2&scaling=scale-down
