@@ -37,7 +37,7 @@ class _InventoryPageState extends State<InventoryPage> {
 //            height: getSizeHeight(context, 10),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 //photo,
                 SizedBox(
@@ -82,10 +82,10 @@ class _InventoryPageState extends State<InventoryPage> {
                             height: getSizeHeight(context, 5),
                             width: getSizeWidth(context, 25),
                             child: FlatButton(
-                              color: purpleButtonNonActive,
+                              color: purpleButtonActive,
                               shape: RoundedRectangleBorder(
-                                  borderRadius: new BorderRadius.circular(12.0),
-                                  side: BorderSide(color: Colors.purple)),
+                                  borderRadius:
+                                      new BorderRadius.circular(12.0)),
                               child: Text("Order More",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
@@ -102,11 +102,13 @@ class _InventoryPageState extends State<InventoryPage> {
                   ],
                 ),
                 SizedBox(
-                  width: getSizeWidth(context, 12),
+                  width: getSizeWidth(context, 15),
                 ),
                 daysToExpire == 0
-                    ? Image.asset('assets/missing.png')
-                    : Image.asset('assets/check.png'),
+                    ? new Icon(Icons.error_outline,
+                        color: Colors.black, size: 35.0)
+                    : new Icon(Icons.check_circle_outline,
+                        color: Color(0xff9AD4D6), size: 35.0),
                 SizedBox(
                   width: getSizeWidth(context, 1),
                 ),

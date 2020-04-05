@@ -10,6 +10,7 @@ import 'package:covid/screens/pickup_scheduled.dart';
 import 'package:covid/utils/const_variables.dart';
 import 'package:flutter/material.dart';
 import 'package:covid/screens/pickup_selection.dart';
+import 'package:flutter/services.dart';
 
 import 'screens/dashboard.dart';
 import 'screens/dashboard.dart';
@@ -34,6 +35,7 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return new MaterialApp(
       title: 'covid-101',
 //      key: Keys.globKey,
