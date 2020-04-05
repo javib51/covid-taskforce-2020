@@ -1,3 +1,4 @@
+import 'package:covid/app_routes.dart';
 import 'package:covid/data/inventory_item.dart';
 import 'package:covid/data/local_data.dart';
 import 'package:covid/utils.dart';
@@ -96,7 +97,8 @@ class _InventoryPageState extends State<InventoryPage> {
                                     color: turquoiseLightButton,
                                   )),
                               onPressed: () {
-                                print("order more");
+                                Navigator.pushNamed(
+                                    context, AppRoutes.shoppingBasket);
                               },
                             ),
                           ),
