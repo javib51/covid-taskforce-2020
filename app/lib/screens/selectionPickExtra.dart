@@ -121,20 +121,42 @@ class _SelectionPickExtraPageState extends State<SelectionPickExtraPage> {
                                     SizedBox(width: getSizeWidth(context, 2),)
                                   ],
                                 ),
-                                Column(
-                                  children: [
-                                    Container(
-                                      width: getSizeWidth(context, 50),
-                                      child: Text("Please consider helping drop off other people orders. We will match you to people who live near you or live on your way back home!",
-                                          textAlign: TextAlign.justify,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: getSizeHeight(context, 1.5),
-                                            color: blackText,
-                                          )),
-                                    )
-                                  ],
-                                ),
+                                new Expanded(
+                                    child: new Padding(
+                                        padding: new EdgeInsets.only(
+                                            left: getSizeWidth(context, 1),
+                                            right: getSizeWidth(context, 2)),
+                                        child: new Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: <Widget>[
+                                              Container(
+                                                alignment: Alignment(-1, -1),
+                                                child: Text(
+                                                  "Please consider helping drop off other people orders. We will match you to people who live near you or live on your way back home!",
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight: FontWeight.w600,
+                                                      fontStyle: FontStyle.normal,
+                                                      fontSize: 10),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                              ),
+                                            ])))
+//                                Column(
+//                                  children: [
+//                                    Container(
+//                                      width: getSizeWidth(context, 50),
+//                                      child: Text("Please consider helping drop off other people orders. We will match you to people who live near you or live on your way back home!",
+//                                          textAlign: TextAlign.justify,
+//                                          style: TextStyle(
+//                                            fontWeight: FontWeight.w500,
+//                                            fontSize: getSizeHeight(context, 1.5),
+//                                            color: blackText,
+//                                          )),
+//                                    )
+//                                  ],
+//                                ),
                               ]
                           )
                       ),
@@ -150,16 +172,28 @@ class _SelectionPickExtraPageState extends State<SelectionPickExtraPage> {
                                   visible: selectedButton == 1,
                                   child: Row(
                                     children: [
-                                      Container(
-                                        width: getSizeWidth(context, 60),
-                                        child: Text("Awesome! We’ll send you info on who’s order you’ll help with soon",
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: getSizeHeight(context, 3.3),
-                                              color: purpleButtonActive,
-                                            )),
-                                      ),
+                                      new Expanded(
+                                          child: new Padding(
+                                              padding: new EdgeInsets.only(
+                                                  left: getSizeWidth(context, 1),
+                                                  right: getSizeWidth(context, 2)),
+                                              child: new Column(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: <Widget>[
+                                                    Container(
+                                                      alignment: Alignment(-1, -1),
+                                                      child: Text(
+                                                        "Awesome! We’ll send you info on who’s order you’ll help with soon",
+                                                        style: TextStyle(
+                                                            color: purpleButtonActive,
+                                                            fontWeight: FontWeight.w500,
+                                                            fontStyle: FontStyle.normal,
+                                                            fontSize: getSizeHeight(context, 3.3)),
+                                                        textAlign: TextAlign.center,
+                                                      ),
+                                                    ),
+                                                  ])))
                                     ],
                                   ),
                                 ),
@@ -170,29 +204,60 @@ class _SelectionPickExtraPageState extends State<SelectionPickExtraPage> {
                                 ),
                                 Row(
                                   children: [
-                                    Container(
-                                      width: getSizeWidth(context, 60),
-                                      height: getSizeHeight(context, 8),
-                                      padding: EdgeInsets.only(right: getSizeWidth(context, 7), left: getSizeWidth(context, 7)),
-                                      child: FlatButton(
-                                        color: purpleButtonActive,
-                                        padding: EdgeInsets.all(getSizeWidth(context, 5)),
-                                        disabledColor: purpleButtonNonActive,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: new BorderRadius.circular(12.0),
-                                        ),
-                                        child: Text("Confirm order",
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: getSizeHeight(context, 2),
-                                              color: turquoiseLightButton,
-                                            )),
-                                        onPressed: () {
-                                          Navigator.pushNamed(context, AppRoutes.orderConfirmed);
-                                        },
-                                      ),
-                                    ),
+                                    new Expanded(
+                                        child: new Padding(
+                                            padding: new EdgeInsets.only(
+                                                left: getSizeWidth(context, 1),
+                                                right: getSizeWidth(context, 2)),
+                                            child: new Column(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                children: <Widget>[
+                                                  Container(
+                                                    alignment: Alignment(0, 0),
+                                                    child: FlatButton(
+                                                      color: purpleButtonActive,
+                                                      padding: EdgeInsets.all(getSizeWidth(context, 5)),
+                                                      disabledColor: purpleButtonNonActive,
+                                                      shape: RoundedRectangleBorder(
+                                                        borderRadius: new BorderRadius.circular(12.0),
+                                                      ),
+                                                      child: Text("Confirm order",
+                                                          textAlign: TextAlign.center,
+                                                          style: TextStyle(
+                                                            fontWeight: FontWeight.w500,
+                                                            fontSize: getSizeHeight(context, 2),
+                                                            color: turquoiseLightButton,
+                                                          )),
+                                                      onPressed: () {
+                                                        Navigator.pushNamed(context, AppRoutes.orderConfirmed);
+                                                      },
+                                                    ),
+                                                  ),
+                                                ])))
+//                                    Container(
+//                                      width: getSizeWidth(context, 60),
+//                                      height: getSizeHeight(context, 8),
+//                                      padding: EdgeInsets.only(right: getSizeWidth(context, 7), left: getSizeWidth(context, 7)),
+//                                      child: FlatButton(
+//                                        color: purpleButtonActive,
+//                                        padding: EdgeInsets.all(getSizeWidth(context, 5)),
+//                                        disabledColor: purpleButtonNonActive,
+//                                        shape: RoundedRectangleBorder(
+//                                          borderRadius: new BorderRadius.circular(12.0),
+//                                        ),
+//                                        child: Text("Confirm order",
+//                                            textAlign: TextAlign.center,
+//                                            style: TextStyle(
+//                                              fontWeight: FontWeight.w500,
+//                                              fontSize: getSizeHeight(context, 2),
+//                                              color: turquoiseLightButton,
+//                                            )),
+//                                        onPressed: () {
+//                                          Navigator.pushNamed(context, AppRoutes.orderConfirmed);
+//                                        },
+//                                      ),
+//                                    ),
                                   ],
                                 ),
                               ]

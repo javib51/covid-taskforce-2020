@@ -60,10 +60,11 @@ class _PickupSelectionState extends State<PickupSelection> {
               child: Padding(
                 padding: EdgeInsets.only(
 //                  left: getSizeWidth(context, 4.7),
-                  right: getSizeWidth(context, 4.2),
+                  //right: getSizeWidth(context, 4.2),
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(
                       height: getSizeHeight(context, 1),
