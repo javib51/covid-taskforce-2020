@@ -171,7 +171,6 @@ class _PickupPerAssState extends State<PickupPerAss> {
                                               style: TextStyle(
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.w500,
-                                                  fontFamily: "Core Sans G",
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 18),
                                               textAlign: TextAlign.center,

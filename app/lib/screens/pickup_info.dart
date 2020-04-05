@@ -157,7 +157,6 @@ class _PickupInfoPageState extends State<PickupInfoPage> {
                                               style: TextStyle(
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.w500,
-                                                  fontFamily: "Core Sans G",
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 18),
                                               textAlign: TextAlign.center,
@@ -301,7 +300,6 @@ class _PickupInfoPageState extends State<PickupInfoPage> {
                                             style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 18,
-                                              fontFamily: "Core Sans G",
                                               color: turquoiseLightButton,
                                             )),
                                         onPressed: () {

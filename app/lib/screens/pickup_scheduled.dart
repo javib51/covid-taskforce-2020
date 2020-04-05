@@ -162,7 +162,6 @@ class _PickupScheduledState extends State<PickupScheduled> {
                                               style: TextStyle(
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.w500,
-                                                  fontFamily: "Core Sans G",
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 18),
                                               textAlign: TextAlign.center,
@@ -211,7 +210,6 @@ class _PickupScheduledState extends State<PickupScheduled> {
                                               style: TextStyle(
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.w500,
-                                                  fontFamily: "Core Sans G",
                                                   fontStyle: FontStyle.normal,
                                                   height: 1.8,
                                                   fontSize: 14),

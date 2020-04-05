@@ -60,7 +60,7 @@ class _RecipesPageState extends State<RecipesPage> {
                       Padding(
                         child: Image.asset(recipe.photo),
                         padding:
-                            EdgeInsets.only(top: getSizeHeight(context, 2)),
+                            EdgeInsets.only(top: getSizeHeight(context, 1), bottom: getSizeHeight(context, 1)),
                       ),
                       SizedBox(
                         width: getSizeWidth(context, 5),
@@ -155,7 +155,7 @@ class _RecipesPageState extends State<RecipesPage> {
                       Padding(
                         child: Image.asset(recipe.items[0].photo),
                         padding:
-                            EdgeInsets.only(top: getSizeHeight(context, 2)),
+                        EdgeInsets.only(top: getSizeHeight(context, 1), bottom: getSizeHeight(context, 1)),
                       ),
                       SizedBox(
                         width: getSizeWidth(context, 4),
@@ -163,7 +163,7 @@ class _RecipesPageState extends State<RecipesPage> {
                       Padding(
                         child: Image.asset(recipe.items[1].photo),
                         padding:
-                            EdgeInsets.only(top: getSizeHeight(context, 2)),
+                        EdgeInsets.only(top: getSizeHeight(context, 1), bottom: getSizeHeight(context, 1)),
                       ),
                       SizedBox(
                         width: getSizeWidth(context, 4),
@@ -171,7 +171,7 @@ class _RecipesPageState extends State<RecipesPage> {
                       Padding(
                         child: Image.asset(recipe.items[2].photo),
                         padding:
-                            EdgeInsets.only(top: getSizeHeight(context, 2)),
+                        EdgeInsets.only(top: getSizeHeight(context, 1), bottom: getSizeHeight(context, 1)),
                       ),
                     ],
                   ),
