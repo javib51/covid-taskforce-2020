@@ -108,7 +108,6 @@ class _AwaitPickAssState extends State<AwaitPickAss> {
                                                     style: const TextStyle(
                                                         color: purpleButtonActive,
                                                         fontWeight: FontWeight.w500,
-                                                        fontFamily: "Core Sans G",
                                                         fontStyle: FontStyle.normal,
                                                         fontSize: 24.0),
                                                     text:
@@ -117,7 +116,6 @@ class _AwaitPickAssState extends State<AwaitPickAss> {
                                                     style: const TextStyle(
                                                         color: purpleButtonActive,
                                                         fontWeight: FontWeight.w500,
-                                                        fontFamily: "Core Sans G",
                                                         fontStyle: FontStyle.normal,
                                                         decoration: TextDecoration
                                                             .underline,
@@ -164,7 +162,6 @@ class _AwaitPickAssState extends State<AwaitPickAss> {
                                               style: TextStyle(
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.w500,
-                                                  fontFamily: "Core Sans G",
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 18),
                                               textAlign: TextAlign.center,

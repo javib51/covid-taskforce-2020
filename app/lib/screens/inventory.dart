@@ -62,7 +62,6 @@ class _InventoryPageState extends State<InventoryPage> {
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 20,
-                        fontFamily: "Core Sans G",
                       ),
                     ),
                     Text(
@@ -72,7 +71,6 @@ class _InventoryPageState extends State<InventoryPage> {
                         color: Color(0xffA19C9C),
                         fontStyle: FontStyle.italic,
                         fontSize: 12,
-                        fontFamily: "Core Sans G",
                       ),
                     ),
                     SizedBox(
@@ -93,7 +91,6 @@ class _InventoryPageState extends State<InventoryPage> {
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 12,
-                                    fontFamily: "Core Sans G",
                                     color: turquoiseLightButton,
                                   )),
                               onPressed: () {
@@ -124,7 +121,6 @@ class _InventoryPageState extends State<InventoryPage> {
                         fontStyle: FontStyle.italic,
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        fontFamily: "Core Sans G Rounded",
                       ),
                     ),
                     Text(
@@ -136,7 +132,6 @@ class _InventoryPageState extends State<InventoryPage> {
                         fontStyle: FontStyle.italic,
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        fontFamily: "Core Sans G",
                       ),
                     ),
                   ],
