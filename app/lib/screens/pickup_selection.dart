@@ -31,7 +31,7 @@ class _PickupSelectionState extends State<PickupSelection> {
 
   Widget _buildBody(BuildContext context) {
     List<Item> items;
-    items = LocalData.instance.basket;
+    items = LocalData.instance.basket_selected;
 
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: getSizeWidth(context, 6)),

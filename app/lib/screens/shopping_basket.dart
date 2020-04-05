@@ -12,6 +12,7 @@ class ShoppingBasketPage extends StatefulWidget {
 
 class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
   List<Item> items;
+  List<Item> items_selected;
 
   @override
   void initState() {
@@ -122,7 +123,9 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                           onPressed: () {
                             if (item.units > 0) {
                               item.units--;
-                              setState(() {});
+                              setState(() {
+                                items_selected.remove(item);
+                              });
                             }
                           },
                         ),
@@ -134,7 +137,9 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                           ),
                           onPressed: () {
                             item.units++;
-                            setState(() {});
+                            setState(() {
+                              items_selected.add(item);
+                            });
                           },
                         ),
                       ],
@@ -166,16 +171,17 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
   @override
   Widget build(BuildContext context) {
     items = LocalData.instance.basket;
+    items_selected = LocalData.instance.basket_selected;
 
     return SafeArea(
       child: Scaffold(
         appBar: MyCustomAppBar(title: "Supermarket X", height: 90),
         body: _buildBody(context),
         floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {
+          onPressed: items_selected.isEmpty ? (){} : () {
             Navigator.pushNamed(context, AppRoutes.pickupSelection);
           },
-          backgroundColor: Color(0xff564787),
+          backgroundColor: items_selected.isEmpty? Color(0x55564787) : Color(0xff564787),
           label: Text(
             "Place an order",
             style: TextStyle(

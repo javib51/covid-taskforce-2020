@@ -41,6 +41,9 @@ class LocalData {
         units: 0),
   ];
 
+  List<Item> basket_selected = [
+  ];
+
   List<InventoryItem> inventory = [
     InventoryItem(
         name: "Eggs",
