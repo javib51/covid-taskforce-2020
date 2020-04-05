@@ -58,7 +58,13 @@ class _DashboardPageState extends State<DashboardPage> {
               onPressed: () {
                 Navigator.pushNamed(context, AppRoutes.pickupselection);
               },
-            )
+            ),
+            FlatButton(
+              child: Text("pickupinfo"),
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.pickupInfo);
+              },
+            ),
           ],
         ),
       ),

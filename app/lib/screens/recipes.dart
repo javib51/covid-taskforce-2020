@@ -1,3 +1,4 @@
+import 'package:covid/app_routes.dart';
 import 'package:covid/data/inventory_item.dart';
 import 'package:covid/data/local_data.dart';
 import 'package:covid/data/recipe.dart';
@@ -127,7 +128,9 @@ class _RecipesPageState extends State<RecipesPage> {
                                           fontSize: 12,
                                           color: turquoiseLightButton,
                                         )),
-                                    onPressed: null,
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, AppRoutes.shoppingBasket);
+                                    },
                                   ),
                                 ),
                         ],

@@ -2,6 +2,7 @@ import 'package:covid/utils.dart';
 import 'package:covid/utils/const_variables.dart';
 import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:covid/app_routes.dart';
 
 class TimeframeSelectionPage extends StatefulWidget {
   @override
@@ -164,7 +165,7 @@ class _TimeframeSelectionPageState extends State<TimeframeSelectionPage> {
                 onPressed: !selected
                     ? null
                     : () {
-                        //                  Navigator.pushNamed(context, AppRoutes.map);
+                        Navigator.pushNamed(context, AppRoutes.orderConfirmed);
                       },
               ),
             ),

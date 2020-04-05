@@ -2,6 +2,7 @@ import 'package:covid/utils.dart';
 import 'package:covid/utils/const_variables.dart';
 import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:covid/app_routes.dart';
 
 class SelectionPickExtraPage extends StatefulWidget {
   @override
@@ -170,10 +171,12 @@ class _SelectionPickExtraPageState extends State<SelectionPickExtraPage> {
                                 Row(
                                   children: [
                                     Container(
+                                      width: getSizeWidth(context, 60),
                                       height: getSizeHeight(context, 8),
-                                      padding: EdgeInsets.only(left: getSizeWidth(context, 10), right: getSizeWidth(context, 10)),
+                                      padding: EdgeInsets.only(right: getSizeWidth(context, 7), left: getSizeWidth(context, 7)),
                                       child: FlatButton(
                                         color: purpleButtonActive,
+                                        padding: EdgeInsets.all(getSizeWidth(context, 5)),
                                         disabledColor: purpleButtonNonActive,
                                         shape: RoundedRectangleBorder(
                                           borderRadius: new BorderRadius.circular(12.0),
@@ -186,7 +189,7 @@ class _SelectionPickExtraPageState extends State<SelectionPickExtraPage> {
                                               color: turquoiseLightButton,
                                             )),
                                         onPressed: () {
-                                          //                  Navigator.pushNamed(context, AppRoutes.map);
+                                          Navigator.pushNamed(context, AppRoutes.orderConfirmed);
                                         },
                                       ),
                                     ),

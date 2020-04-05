@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covid/data/local_data.dart';
 import 'package:covid/data/item.dart';
+import 'package:covid/widgets/appbar.dart';
+
 
 import '../utils.dart';
 import '../utils.dart';
@@ -35,10 +37,10 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
     items = LocalData.instance.basket;
 
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: getSizeWidth(context, 6)),
+      padding: EdgeInsets.symmetric(horizontal: getSizeWidth(context, 6),),
       children: <Widget>[
         SizedBox(
-          height: getSizeHeight(context, 7.2),
+          height: getSizeHeight(context, 2),
         ),
         Container(
           width: getSizeWidth(context, 50),
@@ -171,21 +173,7 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: new Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(
-            color: Colors.white, //change your color here
-          ),
-          title: Text(
-            "Community",
-            style: TextStyle(
-              color: Color(0xff9AD4D6),
-              fontSize: 24,
-              fontFamily: "Core Sans G",
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
+        appBar: MyCustomAppBar(title: "Supermarket X", height: 90),
         body: _buildBody(context),
       ),
     );
