@@ -1,6 +1,7 @@
 import 'package:covid/screens/dashboard.dart';
 import 'package:covid/screens/landpage.dart';
 import 'package:covid/screens/map.dart';
+import 'package:covid/screens/pickup_info.dart';
 import 'package:covid/screens/shopping_basket.dart';
 import 'package:covid/screens/timeframe_selection.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class AppRoutes {
   static const pickupselection = '/pickupselection';
   static const timeframeSelectionPickup = '/timeframePickup';
   static const selectionPickExtra = '/selectionPickExtra';
+  static const pickupInfo = '/pickupInfo';
 
   static Map<String, WidgetBuilder> getRoutes() {
     return <String, WidgetBuilder>{
@@ -31,6 +33,7 @@ class AppRoutes {
       AppRoutes.pickupselection: (context) => PickupSelection(),
       AppRoutes.timeframeSelectionPickup: (context) => TimeframeSelectionPickPage(),
       AppRoutes.selectionPickExtra: (context) => SelectionPickExtraPage(),
+      AppRoutes.pickupInfo: (context) => PickupInfoPage(),
     };
   }
 }
