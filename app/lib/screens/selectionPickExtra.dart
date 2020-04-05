@@ -2,6 +2,7 @@ import 'package:covid/utils.dart';
 import 'package:covid/utils/const_variables.dart';
 import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:covid/app_routes.dart';
 
 class SelectionPickExtraPage extends StatefulWidget {
   @override
@@ -188,7 +189,7 @@ class _SelectionPickExtraPageState extends State<SelectionPickExtraPage> {
                                               color: turquoiseLightButton,
                                             )),
                                         onPressed: () {
-                                          //                  Navigator.pushNamed(context, AppRoutes.map);
+                                          Navigator.pushNamed(context, AppRoutes.orderConfirmed);
                                         },
                                       ),
                                     ),

@@ -3,6 +3,7 @@ import 'package:covid/data/local_data.dart';
 import 'package:covid/utils.dart';
 import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:covid/app_routes.dart';
 
 class ShoppingBasketPage extends StatefulWidget {
   @override
@@ -161,7 +162,7 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
         body: _buildBody(context),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            print("place an order");
+            Navigator.pushNamed(context, AppRoutes.pickupSelection);
           },
           backgroundColor: Color(0xff564787),
           label: Text(

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:covid/widgets/appbar.dart';
 import 'package:covid/data/local_data.dart';
 import 'package:covid/data/item.dart';
+import 'package:covid/app_routes.dart';
 
 import '../utils.dart';
 import '../utils.dart';
@@ -154,7 +155,9 @@ class _PickupSelectionState extends State<PickupSelection> {
                         child: SizedBox(
                             width: getSizeWidth(context, 60),
                             child: MaterialButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, AppRoutes.timeframeSelectionPickup);
+                                },
                                 height: getSizeHeight(context, 8),
                                 splashColor: Color(0xff67A8AA),
                                 color: turquoiseDarkButton,
@@ -185,7 +188,9 @@ class _PickupSelectionState extends State<PickupSelection> {
                         child: SizedBox(
                             width: getSizeWidth(context, 60),
                             child: MaterialButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, AppRoutes.timeframeSelection);
+                                },
                                 height: getSizeHeight(context, 8),
                                 splashColor: Color(0xff67A8AA),
                                 color: turquoiseDarkButton,

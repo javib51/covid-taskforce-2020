@@ -2,6 +2,8 @@ import 'package:covid/utils.dart';
 import 'package:covid/utils/const_variables.dart';
 import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:covid/app_routes.dart';
+
 
 class TimeframeSelectionPickPage extends StatefulWidget {
   @override
@@ -61,10 +63,10 @@ class _TimeframeSelectionPickPageState extends State<TimeframeSelectionPickPage>
                       color: blackText,
                     )),
                 onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.selectionPickExtra);
                   selectedButton = 1;
                   selected = true;
                   setState(() {});
-                  //                  Navigator.pushNamed(context, AppRoutes.map);
                 },
               ),
             ),
@@ -85,10 +87,10 @@ class _TimeframeSelectionPickPageState extends State<TimeframeSelectionPickPage>
                       color: blackText,
                     )),
                 onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.selectionPickExtra);
                   selectedButton = 2;
                   selected = true;
                   setState(() {});
-                  //                  Navigator.pushNamed(context, AppRoutes.map);
                 },
               ),
             ),
@@ -109,11 +111,11 @@ class _TimeframeSelectionPickPageState extends State<TimeframeSelectionPickPage>
                       color: blackText,
                     )),
                 onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.selectionPickExtra);
                   selectedButton = 3;
                   selected = true;
 
                   setState(() {});
-                  //                  Navigator.pushNamed(context, AppRoutes.map);
                 },
               ),
             ),
@@ -134,10 +136,10 @@ class _TimeframeSelectionPickPageState extends State<TimeframeSelectionPickPage>
                       color: blackText,
                     )),
                 onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.selectionPickExtra);
                   selectedButton = 4;
                   selected = true;
                   setState(() {});
-                  //                  Navigator.pushNamed(context, AppRoutes.map);
                 },
               ),
             ),
