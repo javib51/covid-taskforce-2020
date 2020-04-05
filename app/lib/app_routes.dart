@@ -1,5 +1,5 @@
 import 'package:covid/screens/dashboard.dart';
-import 'package:covid/screens/landpage.dart';
+import 'package:covid/screens/landingpage.dart';
 import 'package:covid/screens/map.dart';
 import 'package:covid/screens/pickup_info.dart';
 import 'package:covid/screens/shopping_basket.dart';

@@ -14,7 +14,7 @@ class MapPage extends StatefulWidget {
 
 class _MapPageState extends State<MapPage> {
   Completer<GoogleMapController> _controller = Completer();
-  final LatLng myLocation = LatLng(59.345744, 18.0646403);
+  final LatLng myLocation = LatLng(59.343725, 18.063373);
 
   @override
   void initState() {

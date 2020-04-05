@@ -12,18 +12,32 @@ class LocalData {
   List<gc.GroceryShop> groceries = gc.groceries;
   List<Item> basket = [
     Item(
-        name: "name",
+        name: "Broccoli",
         available: true,
         price: 2.4,
         measureType: "kg",
         photo: 'assets/Group.png',
         units: 0),
     Item(
-        name: "name",
+        name: "Lettuce",
         available: true,
-        price: 2.4,
+        price: 3.8,
         measureType: "kg",
-        photo: 'assets/Group.png',
+        photo: 'assets/Group4.png',
+        units: 0),
+    Item(
+        name: "Tomatoes",
+        available: true,
+        price: 4.7,
+        measureType: "kg",
+        photo: 'assets/tomatos.png',
+        units: 0),
+    Item(
+        name: "Milk",
+        available: true,
+        price: 6.4,
+        measureType: "kg",
+        photo: 'assets/Group6.png',
         units: 0),
   ];
 

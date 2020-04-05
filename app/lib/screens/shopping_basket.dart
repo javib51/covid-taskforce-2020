@@ -95,7 +95,7 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                   ],
                 ),
                 SizedBox(
-                  width: getSizeWidth(context, 12),
+                  width: getSizeWidth(context, 4),
                 ),
                 Column(
                   children: <Widget>[

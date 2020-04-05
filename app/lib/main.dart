@@ -2,6 +2,7 @@ import 'package:covid/app_routes.dart';
 import 'package:covid/keys.dart';
 import 'package:covid/screens/awaiting_pickup_assignee.dart';
 import 'package:covid/screens/dashboard.dart';
+import 'package:covid/screens/landingpage.dart';
 import 'package:covid/screens/order_confirmed.dart';
 import 'package:covid/screens/pickup_ontheway.dart';
 import 'package:covid/screens/pickup_person_assigned.dart';
@@ -48,7 +49,7 @@ class _AppState extends State<App> {
         backgroundColor: Colors.white,
       ),
       //home: new MyHomePage(key: new Key("aaaaa"),title: "My app -" + Config.helloMessage,),
-      home: new DashboardPage(),
+      home: new LandingPage(),
       navigatorKey: Keys.navKey,
       routes: AppRoutes.getRoutes(),
     );
