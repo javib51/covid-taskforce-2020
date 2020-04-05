@@ -170,7 +170,6 @@ class _PickupOnTheWayPickerState extends State<PickupOnTheWayPicker> {
                                               style: TextStyle(
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.w500,
-                                                  fontFamily: "Core Sans G",
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 18),
                                               textAlign: TextAlign.center,
@@ -224,7 +223,6 @@ class _PickupOnTheWayPickerState extends State<PickupOnTheWayPicker> {
                                                       color: Colors.black,
                                                       fontWeight:
                                                           FontWeight.w500,
-                                                      fontFamily: "Core Sans G",
                                                       fontStyle:
                                                           FontStyle.normal,
                                                       height: 1.8,
