@@ -134,7 +134,8 @@ class _AwaitPickAssState extends State<AwaitPickAss> {
                           children: <Widget>[
                         SpinKitPumpingHeart(
                         color: turquoiseDarkButton,
-                          size: 25.0),
+                          size: 30.0
+                        ),
 //                            new Icon(
 //                              Icons.hourglass_empty,
 //                              color: Colors.black,
