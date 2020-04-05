@@ -170,10 +170,12 @@ class _SelectionPickExtraPageState extends State<SelectionPickExtraPage> {
                                 Row(
                                   children: [
                                     Container(
+                                      width: getSizeWidth(context, 60),
                                       height: getSizeHeight(context, 8),
-                                      padding: EdgeInsets.only(left: getSizeWidth(context, 10), right: getSizeWidth(context, 10)),
+                                      padding: EdgeInsets.only(right: getSizeWidth(context, 7), left: getSizeWidth(context, 7)),
                                       child: FlatButton(
                                         color: purpleButtonActive,
+                                        padding: EdgeInsets.all(getSizeWidth(context, 5)),
                                         disabledColor: purpleButtonNonActive,
                                         shape: RoundedRectangleBorder(
                                           borderRadius: new BorderRadius.circular(12.0),
