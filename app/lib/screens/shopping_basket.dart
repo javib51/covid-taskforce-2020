@@ -46,30 +46,33 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                   radius: 30,
                 ),
                 SizedBox(
-                  width: getSizeWidth(context, 7),
+                  width: getSizeWidth(context, 3),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    SizedBox(
-                      height: getSizeHeight(context, 0.7),
-                    ),
-                    Text(
-                      item.name,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
+                Container(
+                  width: getSizeWidth(context, 25),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(
+                        height: getSizeHeight(context, 0.7),
                       ),
-                    ),
-                    Text(
-                      item.available ? "Available" : "Out of Order",
-                      style: TextStyle(
-                        color: Color(0xff9AD4D6),
-                        fontStyle: FontStyle.italic,
-                        fontSize: 12,
+                      Text(
+                        item.name,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                        ),
                       ),
-                    ),
-                  ],
+                      Text(
+                        item.available ? "Available" : "Out of Order",
+                        style: TextStyle(
+                          color: Color(0xff9AD4D6),
+                          fontStyle: FontStyle.italic,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   width: getSizeWidth(context, 10),
@@ -101,7 +104,7 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                 Column(
                   children: <Widget>[
                     Text(
-                      item.units == 0 ? "" : "${item.units}",
+                      item.units == 0 ? "0" : "${item.units}",
                       style: TextStyle(
                         fontSize: 20,
                         color: Color(0xff9AD4D6),
@@ -111,7 +114,11 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                       children: <Widget>[
 //                        IconButton(icon: ,)
                         new IconButton(
-                          icon: new Image.asset('assets/circle-minus.png'),
+                          icon: new Icon(
+                            Icons.remove_circle_outline,
+                            color: Color(0xff564787),
+                            size: 20.0,
+                          ),
                           onPressed: () {
                             if (item.units > 0) {
                               item.units--;
@@ -120,7 +127,11 @@ class _ShoppingBasketPageState extends State<ShoppingBasketPage> {
                           },
                         ),
                         new IconButton(
-                          icon: new Image.asset('assets/circle-plus.png'),
+                          icon: new Icon(
+                            Icons.add_circle_outline,
+                            color: Color(0xff564787),
+                            size: 20.0,
+                          ),
                           onPressed: () {
                             item.units++;
                             setState(() {});
