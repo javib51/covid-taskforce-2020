@@ -1,5 +1,7 @@
+import 'package:covid/app_routes.dart';
 import 'package:covid/utils.dart';
 import 'package:covid/utils/const_variables.dart';
+import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covid/data/local_data.dart';
@@ -18,9 +20,20 @@ class AwaitPickAss extends StatefulWidget {
 }
 
 class _AwaitPickAssState extends State<AwaitPickAss> {
+  bool pushedNext = false;
+
   @override
   void initState() {
     super.initState();
+  }
+
+  Future<void> nextScreen() async {
+    if (pushedNext == false) {
+      await new Future.delayed(const Duration(seconds: 5));
+      Navigator.pushNamed(context, AppRoutes.pickupPerAss);
+      pushedNext = true;
+      setState(() {});
+    }
   }
 
   String sum(List<Item> items) {
@@ -175,23 +188,10 @@ class _AwaitPickAssState extends State<AwaitPickAss> {
 
   @override
   Widget build(BuildContext context) {
+    nextScreen();
     return SafeArea(
       child: new Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(
-            color: Colors.white, //change your color here
-          ),
-          title: Text(
-            "Community",
-            style: TextStyle(
-              color: Color(0xff9AD4D6),
-              fontSize: 24,
-              fontFamily: "Core Sans G",
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
+        appBar: MyCustomAppBar(height: 90),
         body: _buildBody(context),
       ),
     );

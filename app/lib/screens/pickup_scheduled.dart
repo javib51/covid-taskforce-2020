@@ -1,5 +1,6 @@
 import 'package:covid/utils.dart';
 import 'package:covid/utils/const_variables.dart';
+import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covid/data/local_data.dart';
@@ -317,21 +318,7 @@ class _PickupScheduledState extends State<PickupScheduled> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: new Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(
-            color: Colors.white, //change your color here
-          ),
-          title: Text(
-            "Community",
-            style: TextStyle(
-              color: Color(0xff9AD4D6),
-              fontSize: 24,
-              fontFamily: "Core Sans G",
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
+        appBar: MyCustomAppBar(height: 90),
         body: _buildBody(context),
       ),
     );

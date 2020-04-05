@@ -1,7 +1,11 @@
+import 'package:covid/screens/awaiting_pickup_assignee.dart';
 import 'package:covid/screens/dashboard.dart';
 import 'package:covid/screens/landingpage.dart';
 import 'package:covid/screens/map.dart';
 import 'package:covid/screens/pickup_info.dart';
+import 'package:covid/screens/pickup_ontheway.dart';
+import 'package:covid/screens/pickup_person_assigned.dart';
+import 'package:covid/screens/pickup_scheduled.dart';
 import 'package:covid/screens/shopping_basket.dart';
 import 'package:covid/screens/timeframe_selection.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +29,10 @@ class AppRoutes {
   static const orderConfirmed = '/orderConfirmed';
   static const pickupSelection = '/pickupSelection';
   static const pickupInfo = '/pickupInfo';
+  static const pickupScheduled = '/pickupScheduled';
+  static const awaitPickAss = '/AwaitPickAss';
+  static const pickupPerAss = '/PickupPerAss';
+  static const pickupOnTheWay = '/pickupOnTheWay';
 
   static Map<String, WidgetBuilder> getRoutes() {
     return <String, WidgetBuilder>{
@@ -39,6 +47,10 @@ class AppRoutes {
       AppRoutes.orderConfirmed: (context) => OrderConfirmed(),
       AppRoutes.pickupSelection: (context) => PickupSelection(),
       AppRoutes.pickupInfo: (context) => PickupInfoPage(),
+      AppRoutes.awaitPickAss: (context) => AwaitPickAss(),
+      AppRoutes.pickupPerAss: (context) => PickupPerAss(),
+      AppRoutes.pickupScheduled: (context) => PickupScheduled(),
+      AppRoutes.pickupOnTheWay: (context)=> PickupOnTheWay(),
     };
   }
 }

@@ -1,16 +1,12 @@
+import 'package:covid/app_routes.dart';
+import 'package:covid/data/item.dart';
+import 'package:covid/data/local_data.dart';
 import 'package:covid/utils.dart';
 import 'package:covid/utils/const_variables.dart';
+import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:covid/data/local_data.dart';
-import 'package:covid/data/item.dart';
-import 'package:covid/widgets/appbar.dart';
 
-
-import '../utils.dart';
-import '../utils.dart';
-import '../utils.dart';
-import '../utils.dart';
 import '../utils.dart';
 
 class OrderConfirmed extends StatefulWidget {
@@ -19,9 +15,20 @@ class OrderConfirmed extends StatefulWidget {
 }
 
 class _OrderConfirmedState extends State<OrderConfirmed> {
+  bool pushedNext = false;
+
   @override
   void initState() {
     super.initState();
+  }
+
+  Future<void> nextScreen() async {
+    if (pushedNext == false) {
+      await new Future.delayed(const Duration(seconds: 3));
+      Navigator.pushNamed(context, AppRoutes.awaitPickAss);
+      pushedNext = true;
+      setState(() {});
+    }
   }
 
   String sum(List<Item> items) {
@@ -33,11 +40,14 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
   }
 
   Widget _buildBody(BuildContext context) {
+    nextScreen();
     List<Item> items;
     items = LocalData.instance.basket;
 
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: getSizeWidth(context, 6),),
+      padding: EdgeInsets.symmetric(
+        horizontal: getSizeWidth(context, 6),
+      ),
       children: <Widget>[
         SizedBox(
           height: getSizeHeight(context, 2),
@@ -90,28 +100,37 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
                                           alignment: Alignment(0, 0),
                                           width: getSizeWidth(context, 50),
                                           child: new RichText(
-                                            textAlign: TextAlign.center,
+                                              textAlign: TextAlign.center,
                                               text: new TextSpan(children: [
-                                            new TextSpan(
-                                                style: const TextStyle(
-                                                    color: purpleButtonActive,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontFamily: "Core Sans G",
-                                                    fontStyle: FontStyle.normal,
-                                                    fontSize: 24.0),
-                                                text:
-                                                    "Your order has been confirmed! Your order number is "),
-                                            new TextSpan(
-                                                style: const TextStyle(
-                                                    color: purpleButtonActive,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontFamily: "Core Sans G",
-                                                    fontStyle: FontStyle.normal,
-                                                    decoration: TextDecoration
-                                                        .underline,
-                                                    fontSize: 24.0),
-                                                text: "4587"),
-                                          ])),
+                                                new TextSpan(
+                                                    style: const TextStyle(
+                                                        color:
+                                                            purpleButtonActive,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontFamily:
+                                                            "Core Sans G",
+                                                        fontStyle:
+                                                            FontStyle.normal,
+                                                        fontSize: 24.0),
+                                                    text:
+                                                        "Your order has been confirmed! Your order number is "),
+                                                new TextSpan(
+                                                    style: const TextStyle(
+                                                        color:
+                                                            purpleButtonActive,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontFamily:
+                                                            "Core Sans G",
+                                                        fontStyle:
+                                                            FontStyle.normal,
+                                                        decoration:
+                                                            TextDecoration
+                                                                .underline,
+                                                        fontSize: 24.0),
+                                                    text: "4587"),
+                                              ])),
                                         ),
                                       ]))),
                         ]),
@@ -132,8 +151,8 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
                                     padding: new EdgeInsets.only(
                                         left: getSizeWidth(context, 5),
                                         right: getSizeWidth(context, 5),
-                                    top: getSizeHeight(context, 5),
-                                    bottom: getSizeHeight(context, 5)),
+                                        top: getSizeHeight(context, 5),
+                                        bottom: getSizeHeight(context, 5)),
                                     child: new Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,

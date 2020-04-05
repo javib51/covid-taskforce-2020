@@ -1,4 +1,5 @@
 import 'package:covid/app_routes.dart';
+import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:covid/screens/pickup_selection.dart';
 
@@ -75,30 +76,7 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: new Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color(0xff141a46),
-          iconTheme: IconThemeData(
-            color: Colors.white, //change your color here
-          ),
-          title: Text(
-            "Dashboard",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontFamily: "Avenir",
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          leading: Container(),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.settings),
-              onPressed: () {
-//                Navigator.pushNamed(context, AppRoutes.value_settings);
-              },
-            ),
-          ],
-        ),
+        appBar: MyCustomAppBar(height: 90),
         body: _buildBody(context),
       ),
     );

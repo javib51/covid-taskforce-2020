@@ -1,19 +1,11 @@
+import 'package:covid/data/item.dart';
+import 'package:covid/data/local_data.dart';
 import 'package:covid/utils.dart';
 import 'package:covid/utils/const_variables.dart';
+import 'package:covid/widgets/appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:covid/data/local_data.dart';
-import 'package:covid/data/item.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import '../utils.dart';
-import '../utils.dart';
-import '../utils.dart';
-import '../utils.dart';
-import '../utils.dart';
-import '../utils.dart';
-import '../utils.dart';
-import '../utils.dart';
 import '../utils.dart';
 
 class PickupOnTheWay extends StatefulWidget {
@@ -28,6 +20,7 @@ class _PickupOnTheWayState extends State<PickupOnTheWay> {
   }
 
   bool clicked = false;
+  int selected = 0;
 
   String sum(List<Item> items) {
     double sum = 0;
@@ -243,11 +236,14 @@ class _PickupOnTheWayState extends State<PickupOnTheWay> {
                                     onPressed: () {
                                       setState(() {
                                         clicked = true;
+                                        selected = 1;
                                       });
                                     },
                                     height: getSizeHeight(context, 7),
+                                    color: selected == 1
+                                        ? Color(0xffC3E7EE)
+                                        : Colors.white,
                                     splashColor: Color(0xff67A8AA),
-                                    color: Colors.white,
                                     elevation: 8,
                                     highlightElevation: 2,
                                     padding: EdgeInsets.all(0),
@@ -356,12 +352,10 @@ class _PickupOnTheWayState extends State<PickupOnTheWay> {
                               width: getSizeWidth(context, 20),
                               child: new DecoratedBox(
                                 decoration: new BoxDecoration(
-                                  borderRadius:
-                                  new BorderRadius.all(
+                                  borderRadius: new BorderRadius.all(
                                       new Radius.circular(45.0)),
                                 ),
-                                child: Image.asset(
-                                    "assets/guy_young.png",
+                                child: Image.asset("assets/guy_young.png",
                                     fit: BoxFit.fill),
                               ),
                             ),
@@ -438,21 +432,7 @@ class _PickupOnTheWayState extends State<PickupOnTheWay> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: new Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(
-            color: Colors.white, //change your color here
-          ),
-          title: Text(
-            "Community",
-            style: TextStyle(
-              color: Color(0xff9AD4D6),
-              fontSize: 24,
-              fontFamily: "Core Sans G",
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
+        appBar: MyCustomAppBar(height: 90),
         body: _buildBody(context),
       ),
     );
