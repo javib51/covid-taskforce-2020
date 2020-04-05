@@ -43,16 +43,34 @@ class LocalData {
 
   List<InventoryItem> inventory = [
     InventoryItem(
-        name: "name",
-        expirationDays: 2,
-        expirationTime: DateTime.now(),
+        name: "Eggs",
+        expirationDays: 12,
+        expirationTime: DateTime.parse('2020-04-01 00:00:00'),
         photo: 'assets/Group.png',
         units: 1),
     InventoryItem(
-        name: "name 1",
-        expirationDays: 0,
-        expirationTime: DateTime.now(),
-        photo: 'assets/Group4.png',
+        name: "Cheese",
+        expirationDays: 30,
+        expirationTime: DateTime.parse('2020-02-01 00:00:00'),
+        photo: 'assets/cheese.png',
+        units: 1),
+    InventoryItem(
+        name: "Bananas",
+        expirationDays: 9,
+        expirationTime: DateTime.parse('2020-03-30 00:00:00'),
+        photo: 'assets/bananas.png',
+        units: 1),
+    InventoryItem(
+        name: "Salmon Fillet",
+        expirationDays: 9,
+        expirationTime: DateTime.parse('2020-03-30 00:00:00'),
+        photo: 'assets/salmon.png',
+        units: 1),
+    InventoryItem(
+        name: "Milk",
+        expirationDays: 13,
+        expirationTime: DateTime.parse('2020-03-31 00:00:00'),
+        photo: 'assets/Group6.png',
         units: 1),
   ];
 

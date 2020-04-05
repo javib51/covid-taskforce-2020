@@ -18,7 +18,7 @@ double getSizeWidth(BuildContext context, double percentage,
   }
 }
 
-int getExpirationDays(int days,
-    DateTime date) {
-  return days - date.difference(DateTime.now()).inDays;
+int getExpirationDays(int days, DateTime date) {
+  int result = days - (date.difference(DateTime.now()).inDays.abs());
+  return result < 0 ? 0 : result;
 }
